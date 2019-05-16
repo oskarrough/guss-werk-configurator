@@ -13,9 +13,7 @@ export class Configurator extends HTMLElement {
         const feature = event.target.classList[1];
         const value = event.target.value;
         const target = this.querySelector(`.Product-${feature}-img`);
-        
         target.src = `${this.endpoint}${feature}/${value}.png`;
-
     }
 
     showDescription(event) {
@@ -30,11 +28,24 @@ export class Configurator extends HTMLElement {
                 <div class="Menus">
                     ${Object.keys(this.data).map(feature => {
                         return hyper()`
-                            <p class="${`MenuTitle ${feature}`}" onmouseover=${this.showDescription.bind(this)}>${feature}</p>
-                            <select class="${`Menu ${feature}`}" onchange=${this.updateProduct.bind(this)}>
+                            <p
+                                class="${`MenuTitle ${feature}`}"
+                                onmouseover=${this.showDescription.bind(this)}
+                            >
+                                ${feature}
+                            </p>
+                            <select
+                                class="${`Menu ${feature}`}"
+                                onchange=${this.updateProduct.bind(this)}
+                            >
                                 ${this.data[feature].options.map(option => {
                                     return hyper()`
-                                        <option class="Item" value=${option}>${option}</option>
+                                        <option
+                                            class="Item"
+                                            value=${option}
+                                        >
+                                            ${option}
+                                        </option>
                                     `;
                                 })}
                             <select>
