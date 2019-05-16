@@ -1,17 +1,17 @@
 // create model 
 export const model = {
-    0: {
-        title:"hat",
+    hat: {
+        title:"title of the hat feature",
         description: "description for hat feature",
         options: ["black", "green", "red", "yellow"]
     },
-    1: {
-        title:"pants",
+    pants: {
+        title:"titule of the pants feature",
         description: "description for pants feature",
         options: ["yellow","black", "green", "red"]
     },
-    2: {
-        title:"shirt",
+    shirt: {
+        title:"title of the shirt feature",
         description: "description for shirt feature",
         options: ["black", "green", "red", "yellow"]
     }
