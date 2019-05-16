@@ -14,7 +14,9 @@ export class Configurator extends HTMLElement {
             <div class="Config">
                 <div class="Config-menus">
                     ${Object.keys(this.data).map(feature => {
-                        return hyper()`<h6 class="Config">${this.data[feature].title}</h6>`
+                        hyper()`
+                            <h6 class="Config">${this.data[feature].title}</h6>
+                        `
                     })}
                 </div>
                 <div class="Config-product">
