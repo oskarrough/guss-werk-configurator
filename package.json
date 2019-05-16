@@ -1,0 +1,19 @@
+{
+  "name": "clothes-configurator",
+  "version": "1.0.0",
+  "description": "A custom element to create personalized clothes",
+  "scripts": {
+    "start": "browser-sync . --watch --single",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GregVes/clothes-configurator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GregVes/clothes-configurator/issues"
+  },
+  "homepage": "https://github.com/GregVes/clothes-configurator#readme"
+}
