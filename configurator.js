@@ -10,18 +10,41 @@ export class Configurator extends HTMLElement {
     }
 
     render() {
+        const path = "http://localhost:3000/assets/";
         this.html`
             <div class="Config">
-                <div class="Config-menus">
+                <div class="Menus">
                     ${Object.keys(this.data).map(feature => {
-                        hyper()`
-                            <h6 class="Config">${this.data[feature].title}</h6>
-                        `
+                        return hyper()`
+                            <p class="MenuTitle">${this.data[feature].title}</p>
+                            <select class="Menu">
+                                ${this.data[feature].options.map(option => {
+                                    return hyper()`
+                                        <option class="Item" value=${option}>${option}</option>
+                                    `;
+                                })}
+                            <select>
+                        `;
                     })}
                 </div>
-                <div class="Config-product">
+                <div class="Product">
+                    <div class="Product-element"><img
+                                                    src="${`${path}hat/${this.data["0"].options[0]}.png`}"
+                                                    alt="image"
+                                                >
+                    </div>
+                    <div class="Product-element"><img
+                                                    src="${`${path}pants/${this.data["0"].options[0]}.png`}"
+                                                    alt="image"
+                                                >
+                    </div>
+                    <div class="Product-element"><img
+                                                    src="${`${path}shirt/${this.data["0"].options[0]}.png`}"
+                                                    alt="image"
+                                                >
+                    </div>
                 </div>
-                <div class="Config-featureDescription">
+                <div class="FeatureDescription">
                 </div>
             </div>
         `;
