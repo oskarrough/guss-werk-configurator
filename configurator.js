@@ -28,37 +28,22 @@ export class Configurator extends HTMLElement {
                     })}
                 </div>
                 <div class="Product">
-                    <div class="Product-element"><img
-                                                    src="${`${path}hat/${this.data["0"].options[0]}.png`}"
-                                                    alt="image"
-                                                >
-                    </div>
-                    <div class="Product-element"><img
-                                                    src="${`${path}pants/${this.data["0"].options[0]}.png`}"
-                                                    alt="image"
-                                                >
-                    </div>
-                    <div class="Product-element"><img
-                                                    src="${`${path}shirt/${this.data["0"].options[0]}.png`}"
-                                                    alt="image"
-                                                >
-                    </div>
+                    ${Object.keys(this.data).map(feature => {
+                        return hyper()`
+                            <div class="Product-element">
+                                    <img 
+                                        src="${`${path}${this.data[feature].title}/${this.data[feature].options[0]}.png`}"
+                                        alt="an image"
+                                    >
+                            </div>
+                        `;
+                    })}
+
                 </div>
                 <div class="FeatureDescription">
+                    <p>${this.data["0"].description}</p>
                 </div>
             </div>
         `;
     }
 }
-
-
-
-/*                        hyper()`
-                            <select class="Config-menus-menu Menu">
-                                ${this.data[feature].options.map(option => {
-                                    hyper()`<option class="Config-menus-menu-value=${option}>${option}</option>`
-                                })}
-                            </select>
-                            `;
-
-                            hyper()`<h6 class="Config-menus-menu-title">${this.data[feature].title}</h6>`*/
