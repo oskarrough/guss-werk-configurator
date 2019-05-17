@@ -5,21 +5,27 @@ export class Configurator extends HTMLElement {
     constructor() {
         super();
         this.html = hyper(this);
+        this.updateState = this.updateState.bind(this);
         this.state = {};
+        this.state.featureDescription = "";
+        this.state.selectedOptions = {};
+        Object.keys(this.data).forEach(feature => {
+            this.state.selectedOptions[feature] = "";
+        })
         this.render();
     }
 
-    updateProduct(event) {
+    updateState(event, property) {
         const feature = event.target.classList[1];
-        const value = event.target.value;
-        const target = this.querySelector(`.Product-${feature}-img`);
-        target.src = `${this.endpoint}${feature}/${value}.png`;
-    }
 
-    showDescription(event) {
-        const feature = event.target.classList[1];
-        const descriptionElement = this.querySelector(".ActiveFeature-description");
-        descriptionElement.innerHTML = this.data[feature].description;
+        if (property === "description") {
+            this.state.featureDescription = this.data[feature].description; 
+        }
+        else{
+            const value = event.target.value;
+            this.state.selectedOptions[feature] = value;  
+        }
+        this.render();
     }
 
     render() {
@@ -30,13 +36,13 @@ export class Configurator extends HTMLElement {
                         return hyper()`
                             <p
                                 class="${`MenuTitle ${feature}`}"
-                                onmouseover=${this.showDescription.bind(this)}
+                                onmouseover=${(event) => this.updateState(event,"description")}
                             >
                                 ${feature}
                             </p>
                             <select
                                 class="${`Menu ${feature}`}"
-                                onchange=${this.updateProduct.bind(this)}
+                                onchange=${(event) => this.updateState(event,"option")}
                             >
                                 ${this.data[feature].options.map(option => {
                                     return hyper()`
@@ -53,21 +59,23 @@ export class Configurator extends HTMLElement {
                     })}
                 </div>
                 <div class="Product">
-                    ${Object.keys(this.data).map(feature => {
+                    ${Object.keys(this.state.selectedOptions).filter(option => {
+                        return this.state.selectedOptions[option] !== "";
+                    })
+                    .map(option => {
                         return hyper()`
-                            <div class="${`Product-${feature}`}">
+                            <div class="${`Product-${option}`}">
                                     <img
-                                        class="${`Product-${feature}-img`}"
-                                        src="${`${this.endpoint}${feature}/${this.data[feature].options[0]}.png`}"
+                                        class="${`Product-${option}-img`}"
+                                        src="${`${this.endpoint}${option}/${this.state.selectedOptions[option]}.png`}"
                                         alt="an image"
                                     >
                             </div>
                         `;
                     })}
-
                 </div>
                 <div class="ActiveFeature">
-                    <p class="ActiveFeature-description">${this.data["hat"].description}</p>
+                    ${this.state.featureDescription}
                 </div>
             </div>
         `;

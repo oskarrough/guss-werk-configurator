@@ -5,13 +5,13 @@ export const model = {
         description: "description for hat feature",
         options: ["black", "green", "red", "yellow"]
     },
-    pants: {
-        title:"titule of the pants feature",
+    shirt: {
+        title:"titule of the shirt feature",
         description: "description for pants feature",
         options: ["yellow","black", "green", "red"]
     },
-    shirt: {
-        title:"title of the shirt feature",
+    pants: {
+        title:"title of the pants feature",
         description: "description for shirt feature",
         options: ["black", "green", "red", "yellow"]
     }
