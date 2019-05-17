@@ -1,4 +1,7 @@
 // create model 
+
+export const endpoint = "http://localhost:3000/assets/";
+
 export const model = {
     hat: {
         title:"title of the hat feature",
