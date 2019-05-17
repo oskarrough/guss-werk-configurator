@@ -13,7 +13,7 @@ body {
 
 .Menus,
 .Product,
-.ActiveFeature {
+.FeatureDescription {
     display: inline-block;
 }
 
@@ -27,7 +27,7 @@ body {
     padding-left:17%;
 }
 
-.ActiveFeature {
+.FeatureDescription {
     width: 20vh;
     height: 30%;
 }

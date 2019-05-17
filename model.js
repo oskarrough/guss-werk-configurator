@@ -10,12 +10,12 @@ export const model = {
     },
     shirt: {
         title:"titule of the shirt feature",
-        description: "description for pants feature",
+        description: "description for shirt feature",
         options: ["yellow","black", "green", "red"]
     },
     pants: {
         title:"title of the pants feature",
-        description: "description for shirt feature",
+        description: "description for pants feature",
         options: ["black", "green", "red", "yellow"]
     }
 }

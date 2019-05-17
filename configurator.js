@@ -6,7 +6,8 @@ export class Configurator extends HTMLElement {
 
     constructor() {
         super();
-        this.html = hyper(this);
+        this.shadow = this.attachShadow({mode:"open"});
+        this.html = hyper(this.shadow);
         this.updateState = this.updateState.bind(this);
 
         this.props = {};
@@ -19,8 +20,8 @@ export class Configurator extends HTMLElement {
         Object.keys(this.props.data).forEach(feature => {
             this.state.selectedOptions[feature] = "";
         })
-
         this.render();
+        this.loadStyle();
     }
 
     updateState(event, property) {
@@ -34,6 +35,15 @@ export class Configurator extends HTMLElement {
             this.state.selectedOptions[feature] = value;  
         }
         this.render();
+    }
+
+    loadStyle() {
+        const style = hyper()`
+                <style>
+                    @import "./styling.css"
+                </style>
+        `;
+        this.shadowRoot.appendChild(style);
     }
 
     render() {
@@ -67,7 +77,7 @@ export class Configurator extends HTMLElement {
                     })}
                 </div>
                 <div class="Product">
-                    ${Object.keys(this.state.selectedOptions).filter(option => {
+                    ${Object.keys(this.state.selectedOptions).filter(option => { // do not render at init
                         return this.state.selectedOptions[option] !== "";
                     })
                     .map(option => {
@@ -82,7 +92,7 @@ export class Configurator extends HTMLElement {
                         `;
                     })}
                 </div>
-                <div class="ActiveFeature">
+                <div class="FeatureDescription">
                     ${this.state.featureDescription}
                 </div>
             </div>
