@@ -31,7 +31,7 @@ function createMenuElement(featureName, featureObject, updateState) {
 function createProductOptionElement(option, endpoint) {
 
     return hyper()`
-        <div class="${`Product-${option}`}">
+        <div class="${`Product-${option} ProductItem`}">
                     <img
                         class="${`Product-${option}-img`}"
                         src= ${endpoint}
@@ -55,7 +55,7 @@ export class Configurator extends HTMLElement {
         Object.keys(this.model).forEach(feature => {
             this.state.selectedOptions[feature] = {};
             this.state.selectedOptions[feature].endpoint = this.model[feature].url;
-            this.state.selectedOptions[feature].value = "";
+            this.state.selectedOptions[feature].value = this.model[feature].options[0];
             this.state.selectedOptions[feature].format = this.model[feature].format;
         })
         this.render();
