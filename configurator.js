@@ -2,27 +2,29 @@ const hyper = window.hyperHTML;
 
 function createMenuElement(featureName, featureObject, updateState) {
     return hyper()`
-        <p
-            class="${`MenuTitle ${featureName}`}"
-            onmouseover=${(event) => updateState(event,"description")}
-        >
-            ${featureName}
-        </p>
-        <select
-            class="${`Menu ${featureName}`}"
-            onchange=${(event) => updateState(event,"value")}
-        >
-            ${featureObject.options.map(option => {
-                return hyper()`
-                    <option
-                        class="Item"
-                        value=${option}
-                    >
-                        ${option}
-                    </option>
-                `;
-            })}
-        <select>
+        <div class="Menu">
+            <p
+                class="${`Menu-title ${featureName}`}"
+                onmouseover=${(event) => updateState(event,"description")}
+            >
+                ${featureName}
+            </p>
+            <select
+                class="${`Menu-list ${featureName}`}"
+                onchange=${(event) => updateState(event,"value")}
+            >
+                ${featureObject.options.map(option => {
+                    return hyper()`
+                        <option
+                            class="Menu-list-item"
+                            value=${option}
+                        >
+                            ${option}
+                        </option>
+                    `;
+                })}
+            <select>
+        </div>
     `;
 }
 

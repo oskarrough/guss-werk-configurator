@@ -1,3 +1,4 @@
+
 * {
     box-sizing: border-box;
 }
@@ -11,23 +12,47 @@ body {
     justify-content: center;
 }
 
-.Menus,
+/*.Menus,
 .Product,
 .FeatureDescription {
     display: inline-block;
-}
+}*/
 
 .Menus {
-    width:10vw;
-    height:30%;
+    background-color: #ddd;
+    padding: 3rem;
+    min-width: 14rem;
+
+}
+
+.Menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.Menu-list {
+    border:none;
+    outline: none;
+    margin-bottom: 1rem;
+}
+
+.Menu-title {
+   margin:0.5rem 1rem; 
+   display: flex;
+   justify-content: center;
 }
 .Product {
-    width:40vw;
-    height: 30%;
-    padding-left:17%;
+    min-width: 14rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .FeatureDescription {
-    width: 20vh;
-    height: 30%;
+    min-width: 14rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ddd;
 }
