@@ -7,23 +7,42 @@ body {
     margin: 0;
 }
 
+/* configurator container and its children */
+
 .Config {
     display: flex;
     justify-content: center;
+    max-width: 45rem;
 }
 
-/*.Menus,
-.Product,
+.Menus,
+.Product, 
 .FeatureDescription {
-    display: inline-block;
-}*/
+    flex:1;
+}
 
 .Menus {
     background-color: #ddd;
     padding: 3rem;
-    min-width: 14rem;
 
 }
+
+.Product {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.FeatureDescription {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #ddd;
+}
+
+/* Menu */
 
 .Menu {
     display: flex;
@@ -40,19 +59,4 @@ body {
    margin:0.5rem 1rem; 
    display: flex;
    justify-content: center;
-}
-.Product {
-    min-width: 14rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.FeatureDescription {
-    min-width: 14rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #ddd;
 }

@@ -3,12 +3,12 @@ const hyper = window.hyperHTML;
 function createMenuElement(featureName, featureObject, updateState) {
     return hyper()`
         <div class="Menu">
-            <p
+            <h5
                 class="${`Menu-title ${featureName}`}"
                 onmouseover=${(event) => updateState(event,"description")}
             >
                 ${featureName}
-            </p>
+            </h5>
             <select
                 class="${`Menu-list ${featureName}`}"
                 onchange=${(event) => updateState(event,"value")}
@@ -31,7 +31,7 @@ function createMenuElement(featureName, featureObject, updateState) {
 function createProductOptionElement(option, endpoint) {
 
     return hyper()`
-        <div class="${`Product-${option} ProductItem`}">
+        <div class="${`ProductItem`}">
                     <img
                         class="${`Product-${option}-img`}"
                         src= ${endpoint}
