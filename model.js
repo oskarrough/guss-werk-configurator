@@ -2,25 +2,46 @@
 
 export const model = {
 
-    hat: {
-        title:"title of the hat feature",
-        url: "/assets/hat/",
+    base: {
+        title:"Base",
+        url: "/assets/",
         format: ".png",
-        description: "description for hat feature",
-        options: ["black", "green", "red", "yellow"]
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in elit augue",
+        options: ["base"]
     },
-    shirt: {
-        title:"titule of the shirt feature",
-        url: "/assets/shirt/",
+    brusttasche: {
+        title:"Brusttasche",
+        url: "/assets/brusttasche-",
         format: ".png",
-        description: "description for shirt feature",
-        options: ["yellow","black", "green", "red"]
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in elit augue",
+        options: ["left", "middle", "right", "none"]
+     },
+    neck: {
+        title:"Neck",
+        url: "/assets/neck-",
+        format: ".png",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in elit augue",
+        options: ["beige","black","brown","grey", "red"]
     },
-    pants: {
-        title:"title of the pants feature",
-        url: "/assets/pants/",
+    bigTasche: {
+        title: "Big tasche",
+        url: "/assets/tasche-big-",
         format: ".png",
-        description: "description for pants feature",
-        options: ["black", "green", "red", "yellow"]
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in elit augue",
+        options: ["left", "right", "none"]
+    },
+    smallTasche: {
+        title:"Tasche",
+        url: "/assets/tasche-small-",
+        format: ".png",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in elit augue",
+        options: ["left", "right", "none"]
+    },
+    touchonhalter: {
+        title: "Touchonhalter",
+        url: "/assets/touchonhalter-",
+        format: ".png",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in elit augue",
+        options: ["left", "right", "none"]
     }
 }

@@ -5,7 +5,6 @@ function createMenuElement(featureName, featureObject, updateState) {
         <div class="Menu">
             <h5
                 class="${`Menu-title ${featureName}`}"
-                onmouseover=${(event) => updateState(event,"description")}
             >
                 ${featureName}
             </h5>
@@ -13,6 +12,7 @@ function createMenuElement(featureName, featureObject, updateState) {
                 class="${`Menu-list ${featureName}`}"
                 onchange=${(event) => updateState(event,"value")}
             >
+                <option></option>
                 ${featureObject.options.map(option => {
                     return hyper()`
                         <option
@@ -31,7 +31,7 @@ function createMenuElement(featureName, featureObject, updateState) {
 function createProductOptionElement(option, endpoint) {
 
     return hyper()`
-        <div class="${`ProductItem`}">
+        <div class="${`ProductItem ${option}`}">
                     <img
                         class="${`Product-${option}-img`}"
                         src= ${endpoint}
@@ -104,9 +104,6 @@ export class Configurator extends HTMLElement {
                         let endpoint = `${this.state.selectedOptions[option].endpoint}${this.state.selectedOptions[option].value}${this.state.selectedOptions[option].format}`;
                         return createProductOptionElement(option, endpoint);
                     })}
-                </div>
-                <div class="FeatureDescription">
-                    ${this.state.featureDescription}
                 </div>
             </div>
         `;
