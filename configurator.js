@@ -2,34 +2,36 @@ const hyper = window.hyperHTML;
 
 function createMenuElement(featureName, featureObject, updateState) {
     return hyper()`
-        <p
-            class="${`MenuTitle ${featureName}`}"
-            onmouseover=${(event) => updateState(event,"description")}
-        >
-            ${featureName}
-        </p>
-        <select
-            class="${`Menu ${featureName}`}"
-            onchange=${(event) => updateState(event,"value")}
-        >
-            ${featureObject.options.map(option => {
-                return hyper()`
-                    <option
-                        class="Item"
-                        value=${option}
-                    >
-                        ${option}
-                    </option>
-                `;
-            })}
-        <select>
+        <div class="Menu">
+            <h5
+                class="${`Menu-title ${featureName}`}"
+                onmouseover=${(event) => updateState(event,"description")}
+            >
+                ${featureName}
+            </h5>
+            <select
+                class="${`Menu-list ${featureName}`}"
+                onchange=${(event) => updateState(event,"value")}
+            >
+                ${featureObject.options.map(option => {
+                    return hyper()`
+                        <option
+                            class="Menu-list-item"
+                            value=${option}
+                        >
+                            ${option}
+                        </option>
+                    `;
+                })}
+            <select>
+        </div>
     `;
 }
 
 function createProductOptionElement(option, endpoint) {
 
     return hyper()`
-        <div class="${`Product-${option}`}">
+        <div class="${`ProductItem`}">
                     <img
                         class="${`Product-${option}-img`}"
                         src= ${endpoint}
@@ -53,7 +55,7 @@ export class Configurator extends HTMLElement {
         Object.keys(this.model).forEach(feature => {
             this.state.selectedOptions[feature] = {};
             this.state.selectedOptions[feature].endpoint = this.model[feature].url;
-            this.state.selectedOptions[feature].value = "";
+            this.state.selectedOptions[feature].value = this.model[feature].options[0];
             this.state.selectedOptions[feature].format = this.model[feature].format;
         })
         this.render();
