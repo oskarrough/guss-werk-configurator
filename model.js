@@ -14,28 +14,28 @@ export const model = {
         url: "/assets/brusttasche-",
         format: ".png",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in elit augue",
-        options: ["left", "middle", "right", "none"]
+        options: ["left", "middle", "right", "none"],
      },
     neck: {
         title:"Neck",
         url: "/assets/neck-",
         format: ".png",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in elit augue",
-        options: ["beige","black","brown","grey", "red"]
+        options: ["beige","black","brown","grey", "red"],
     },
-    bigTasche: {
-        title: "Big tasche",
-        url: "/assets/tasche-big-",
+    leftTasche: {
+        title: "Left tasche",
+        url: "/assets/tasche-left-",
         format: ".png",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in elit augue",
-        options: ["left", "right", "none"]
+        options: ["small", "big", "none"],
     },
-    smallTasche: {
-        title:"Tasche",
-        url: "/assets/tasche-small-",
+    rightTasche: {
+        title:"Right Tasche",
+        url: "/assets/tasche-right-",
         format: ".png",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in elit augue",
-        options: ["left", "right", "none"]
+        options: ["small", "big", "none"]
     },
     touchonhalter: {
         title: "Touchonhalter",
