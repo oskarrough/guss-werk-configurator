@@ -21,6 +21,7 @@ img,
 .Product {
     position: relative;
     flex: 2;
+    margin-left: 1rem;
 }
 
 .ProductItem {
@@ -39,7 +40,7 @@ img,
 /* Menu */
 
 .Menus {
-    background-color: #ddd;
+    background-color:#EBEEF3;
     padding: 1.5rem;
     font-size: 1.2rem;
     flex:1;
