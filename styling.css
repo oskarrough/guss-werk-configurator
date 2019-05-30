@@ -91,6 +91,8 @@ img {
     display: flex;
     justify-content: center;
     max-width: 90%;
+    padding-left: 0.4rem;
+    font-size:0.9rem;
 }
 
 .Menu-title {
