@@ -13,7 +13,10 @@ function createMenuElement(selectedOption, featureName, featureObject, updateSta
                 onchange=${(event) => updateState(event,"value")}
             >
                 <option>${selectedOption}</option>
-                ${featureObject.options.map(option => {
+                ${featureObject.options.filter(option => {
+                    return option != selectedOption;
+                })
+                .map(option => {
                     return hyper()`
                         <option
                             class="Menu-list-item"
