@@ -22,6 +22,8 @@ img,
     position: relative;
     flex: 2;
     margin-left: 1rem;
+    background-color:#EBEEF3;
+
 }
 
 .ProductItem {
