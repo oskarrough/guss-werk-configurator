@@ -1,6 +1,6 @@
 const hyper = window.hyperHTML;
 
-function createMenuElement(featureName, featureObject, updateState) {
+function createMenuElement(selectedOption, featureName, featureObject, updateState) {
     return hyper()`
         <div class="Menu">
             <h5
@@ -12,7 +12,7 @@ function createMenuElement(featureName, featureObject, updateState) {
                 class="${`Menu-list ${featureName}`}"
                 onchange=${(event) => updateState(event,"value")}
             >
-                <option></option>
+                <option>${selectedOption}</option>
                 ${featureObject.options.map(option => {
                     return hyper()`
                         <option
@@ -93,7 +93,7 @@ export class Configurator extends HTMLElement {
             <div class="Config">
                 <div class="Menus">
                     ${Object.keys(this.model).map(featureName => {
-                        return createMenuElement(featureName, this.model[featureName], this.updateState);
+                        return createMenuElement(this.state.selectedOptions[featureName].value, featureName, this.model[featureName], this.updateState);
                     })}
                 </div>
                 <div class="Product">
