@@ -98,10 +98,10 @@ export class Configurator extends HTMLElement {
                 </div>
                 <div class="Product">
                     ${Object.keys(this.state.selectedOptions).filter(option => {
-                        return this.state.selectedOptions[option].value != "";
+                        return this.state.selectedOptions[option].value != "" && this.state.selectedOptions[option].value != "none";
                     })
                     .map(option => {
-                        let endpoint = `${this.state.selectedOptions[option].endpoint}${this.state.selectedOptions[option].value}${this.state.selectedOptions[option].format}`;
+                       let endpoint = `${this.state.selectedOptions[option].endpoint}${this.state.selectedOptions[option].value}${this.state.selectedOptions[option].format}`;
                         return createProductOptionElement(option, endpoint);
                     })}
                 </div>
