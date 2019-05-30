@@ -1,5 +1,7 @@
 // create model 
 
+export const product = "apron";
+
 export const model = {
 
     base: {
