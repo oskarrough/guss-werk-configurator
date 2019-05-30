@@ -95,7 +95,7 @@ export class Configurator extends HTMLElement {
         this.html`
             <div class="Config">
                 <div class="Menus">
-                    <h1 class="Title">Build your custom ${this.product} </h1>
+                    <h1 class="Title">Design your custom ${this.product} </h1>
                     ${Object.keys(this.model).map(featureName => {
                         return createMenuElement(this.state.selectedOptions[featureName].value, featureName, this.model[featureName], this.updateState);
                     })}
