@@ -81,6 +81,7 @@ img {
 
 .Menu-list {
     border:0 !important;
+    outline:0;
     -webkit-appearance: none;
     margin-bottom: 1rem;
     /*background:#E4E7E9;*/
