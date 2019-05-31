@@ -1,37 +1,128 @@
 
 * {
     box-sizing: border-box;
+    font-family: sans-serif;
 }
 
 body {
-    margin: 0;
+    margin:0;
 }
 
-/* configurator container and its children */
+img {
+    max-height: 100vh;
+    vertical-align: top;
+}
+
+/* configurator container */
 
 .Config {
+    position: relative;
     display: flex;
     justify-content: center;
-    max-width: 45rem;
 }
 
-.Menus,
-.Product, 
-.FeatureDescription {
-    flex:1;
+/* Menus */
+
+.Title {
+    margin: 1rem;
+    font-size: 1.7rem;
+    background: transparent;
+    background-color: white;
+    padding: 0.9rem;
+    
+}
+
+.Title,
+.Menu {
+    opacity:0.8;
+    transition:  opacity 0.2s ease-in-out;
+}
+
+.Title:hover,
+.Menu:hover {
+    opacity:1;
 }
 
 .Menus {
-    background-color: #ddd;
-    padding: 3rem;
+    background-color:#EBEEF3;
+    padding: 1.5rem;
+    font-size: 1.2rem;
+    max-height: 100vh;
+
+    overflow: scroll;
+}
+
+.Menu {
+    display: flex;
+    flex-direction: column;
+    /*margin: 0 1rem;*/
+    margin: 1rem;
+
+    border-radius: 1%;
+    padding: 1rem;
+    background: white;
 
 }
 
-.Product {
+.Title,
+.Menu {
+    transition: all 0.2s ease-in-out;
+    overflow:hidden;
+}
+
+.Title:hover,
+.Menu:hover {
+    transform: scale(1.05);
+    box-shadow: 0 3px 9px 5px rgba(0,0,0,.04)
+}
+
+.Menu-title {
+    margin:0;
+    font-style: italic;
+}
+
+.Menu-list {
+    border:0 !important;
+    outline:0;
+    -webkit-appearance: none;
+    margin-bottom: 1rem;
+    /*background:#E4E7E9;*/
+    background: #E5EAEE;
+    border-radius: 1%;
+    height: 1.5rem;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    max-width: 90%;
+    padding-left: 0.4rem;
+    font-size:0.9rem;
+}
+
+
+/* common styling */
+
+.Menus,
+.Menu,
+.Product,
+.Menu-list {
+    box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+}
+
+/* Product */
+
+.Product {
+    flex: 3;
+    margin-left: 1rem;
+    background-color:#EBEEF3;
+    height: 97%;
+    object-fit: cover;
+}
+
+.ProductItem {
+    position: absolute;
+}
+
+.ProductItem:last-child {
+    position: static;
 }
 
 .FeatureDescription {
@@ -42,21 +133,8 @@ body {
     background-color: #ddd;
 }
 
-/* Menu */
+/* mobile and tablet */ 
 
-.Menu {
-    display: flex;
-    flex-direction: column;
-}
+@media (max-width: 760px) {
 
-.Menu-list {
-    border:none;
-    outline: none;
-    margin-bottom: 1rem;
-}
-
-.Menu-title {
-   margin:0.5rem 1rem; 
-   display: flex;
-   justify-content: center;
 }

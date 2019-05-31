@@ -1,26 +1,49 @@
 // create model 
 
+export const product = "apron";
+
 export const model = {
 
-    hat: {
-        title:"title of the hat feature",
-        url: "/assets/hat/",
+    neck: {
+        title:"Neck",
+        url: "/assets/neck-",
         format: ".png",
-        description: "description for hat feature",
-        options: ["black", "green", "red", "yellow"]
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in elit augue",
+        options: ["beige","black","brown","grey", "red"],
     },
-    shirt: {
-        title:"titule of the shirt feature",
-        url: "/assets/shirt/",
+    brusttasche: {
+        title:"Brusttasche",
+        url: "/assets/brusttasche-",
         format: ".png",
-        description: "description for shirt feature",
-        options: ["yellow","black", "green", "red"]
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in elit augue",
+        options: ["left", "middle", "right", "none"],
+     },
+    touchonhalter: {
+        title: "Touchonhalter",
+        url: "/assets/touchonhalter-",
+        format: ".png",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in elit augue",
+        options: ["left", "right", "none"]
     },
-    pants: {
-        title:"title of the pants feature",
-        url: "/assets/pants/",
+    leftTasche: {
+        title: "Left Tasche",
+        url: "/assets/tasche-left-",
         format: ".png",
-        description: "description for pants feature",
-        options: ["black", "green", "red", "yellow"]
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in elit augue",
+        options: ["small", "big", "none"],
+    },
+    rightTasche: {
+        title:"Right Tasche",
+        url: "/assets/tasche-right-",
+        format: ".png",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in elit augue",
+        options: ["small", "big", "none"]
+    },
+    base: {
+        title:"Base",
+        url: "/assets/",
+        format: ".png",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in elit augue",
+        options: ["base"]
     }
 }
