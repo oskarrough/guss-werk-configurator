@@ -8,6 +8,7 @@ function createMenuElement(selectedOption, featureName, featureObject, updateSta
             >
                 ${featureName}
             </h5>
+            <hr>
             <select
                 class="${`Menu-list ${featureName}`}"
                 onchange=${(event) => updateState(event,"value")}
