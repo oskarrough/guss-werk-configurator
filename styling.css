@@ -19,8 +19,23 @@ img {
 /* Menus */
 
 .Title {
-    margin:1rem;
-    font-size: 2rem;
+    margin: 1rem;
+    font-size: 1.7rem;
+    background: transparent;
+    background-color: white;
+    padding: 0.9rem;
+    
+}
+
+.Title,
+.Menu {
+    opacity:0.8;
+    transition:  opacity 0.2s ease-in-out;
+}
+
+.Title:hover,
+.Menu:hover {
+    opacity:1;
 }
 
 .Menus {
@@ -42,13 +57,16 @@ img {
     border-radius: 1%;
     padding: 1rem;
     background: white;
-    overflow: scroll;
-
-    transition: all 0.2s ease-in-out;
-    overflow:hidden;
 
 }
 
+.Title,
+.Menu {
+    transition: all 0.2s ease-in-out;
+    overflow:hidden;
+}
+
+.Title:hover,
 .Menu:hover {
     transform: scale(1.05);
     box-shadow: 0 3px 9px 5px rgba(0,0,0,.04)
