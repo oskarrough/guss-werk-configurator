@@ -6,16 +6,16 @@ function createMenuElement(selectedOption, featureName, featureObject, updateSta
             <h5
                 class="${`Menu-title ${featureName}`}"
             >
-                ${featureName}
+                ${selectedOption.title}
             </h5>
             <hr>
             <select
                 class="${`Menu-list ${featureName}`}"
                 onchange=${(event) => updateState(event,"value")}
             >
-                <option>${selectedOption}</option>
+                <option>${selectedOption.value}</option>
                 ${featureObject.options.filter(option => {
-                    return option != selectedOption;
+                    return option != selectedOption.value;
                 })
                 .map(option => {
                     return hyper()`
@@ -58,6 +58,7 @@ export class Configurator extends HTMLElement {
         this.state.selectedOptions = {};
         Object.keys(this.model).forEach(feature => {
             this.state.selectedOptions[feature] = {};
+            this.state.selectedOptions[feature].title = this.model[feature].title;
             this.state.selectedOptions[feature].endpoint = this.model[feature].url;
             this.state.selectedOptions[feature].value = this.model[feature].options[0];
             this.state.selectedOptions[feature].format = this.model[feature].format;
@@ -98,7 +99,7 @@ export class Configurator extends HTMLElement {
                 <div class="Menus">
                     <h1 class="Title">Design your custom ${this.product} </h1>
                     ${Object.keys(this.model).map(featureName => {
-                        return createMenuElement(this.state.selectedOptions[featureName].value, featureName, this.model[featureName], this.updateState);
+                        return createMenuElement(this.state.selectedOptions[featureName], featureName, this.model[featureName], this.updateState);
                     })}
                 </div>
                 <div class="Product">
