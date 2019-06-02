@@ -24,7 +24,7 @@ function getMenu(configurator, feature, renderFct) {
                         <option
                             class="Menu-list-item"
                             value=${option}
-                            selected=${option != selectValue ? false : true}
+                            selected=${option === selectValue}
                         >
                             ${option}
                         </option>
