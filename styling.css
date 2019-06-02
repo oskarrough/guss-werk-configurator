@@ -10,6 +10,7 @@ body {
 
 img {
     max-height: 100vh;
+    max-width: 100%;
     vertical-align: top;
     /*filter: drop-shadow(0px 0px 10px pink);*/
 }
