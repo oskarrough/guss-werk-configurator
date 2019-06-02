@@ -13,10 +13,13 @@ img {
     vertical-align: top;
 }
 
+clothes-configurator {
+    display: block;
+}
+
 /* configurator container */
 
 .Config {
-    position: relative;
     display: flex;
     justify-content: center;
 }
@@ -26,29 +29,16 @@ img {
 .Title {
     margin: 1rem;
     font-size: 1.7rem;
-    background: transparent;
-    background-color: white;
     padding: 0.9rem;
     
 }
 
-.Title,
-.Menu {
-    opacity:0.8;
-    transition:  opacity 0.2s ease-in-out;
-}
-
-.Title:hover,
-.Menu:hover {
-    opacity:1;
-}
 
 .Menus {
     background-color:#EBEEF3;
     padding: 1.5rem;
     font-size: 1.2rem;
     max-height: 100vh;
-
     overflow: scroll;
 }
 
@@ -61,40 +51,49 @@ img {
     border-radius: 1%;
     padding: 1rem;
     background: white;
-
-}
-
-.Title,
-.Menu {
+    overflow:auto;
+    opacity:0.8;
     transition: all 0.2s ease-in-out;
-    overflow:hidden;
-}
 
-.Title:hover,
-.Menu:hover {
-    transform: scale(1.05);
-    box-shadow: 0 3px 9px 5px rgba(0,0,0,.04)
+}
+.Menu:hover,
+.BtnBox-button:hover {
+    box-shadow: 0 3px 9px 5px rgba(0,0,0,.04);
+    opacity:1;
 }
 
 .Menu-title {
     margin:0;
+    margin-bottom:1rem;
+    margin-left:0.5rem;
     font-style: italic;
+    font-size: 1.1rem;
 }
 
 .Menu-list {
     border:0 !important;
     outline:0;
-    -webkit-appearance: none;
-    margin-bottom: 1rem;
-    /*background:#E4E7E9;*/
+    margin-bottom: 0.5rem;
     background: #E5EAEE;
     border-radius: 1%;
     height: 1.5rem;
     display: flex;
     justify-content: center;
-    max-width: 90%;
     padding-left: 0.4rem;
     font-size:0.9rem;
+}
+
+.BtnBox {
+    display: flex;
+    justify-content: center;
+}
+
+.BtnBox-button {
+    border-radius: 1rem;
+    font-size: 1.2rem;
+    transition: all 0.2s ease-in-out;
+    padding: 0.6rem;
+    width: 93%;
 }
 
 
@@ -103,18 +102,18 @@ img {
 .Menus,
 .Menu,
 .Product,
-.Menu-list {
+.Menu-list,
+.BtnBox-buton {
     box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
 }
 
 /* Product */
 
 .Product {
-    flex: 3;
+    position: relative;
     margin-left: 1rem;
     background-color:#EBEEF3;
     height: 97%;
-    object-fit: cover;
 }
 
 .ProductItem {

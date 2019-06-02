@@ -2,48 +2,54 @@
 
 export const product = "apron";
 
-export const model = {
+export const model = [
 
-    neck: {
+    {
+        id: "neck",
         title:"Neck",
         url: "/assets/neck-",
         format: ".png",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in elit augue",
         options: ["beige","black","brown","grey", "red"],
     },
-    brusttasche: {
+    {
+        id: "brusttasche",
         title:"Brusttasche",
         url: "/assets/brusttasche-",
         format: ".png",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in elit augue",
-        options: ["left", "middle", "right", "none"],
+        options: ["none","left", "middle", "right"],
      },
-    touchonhalter: {
+    {
+        id: "touchonhalter",
         title: "Touchonhalter",
         url: "/assets/touchonhalter-",
         format: ".png",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in elit augue",
-        options: ["left", "right", "none"]
+        options: ["none","left", "right"]
     },
-    leftTasche: {
+    {
+        id: "leftTasche",
         title: "Left Tasche",
         url: "/assets/tasche-left-",
         format: ".png",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in elit augue",
-        options: ["small", "big", "none"],
+        options: ["none", "small", "big"],
     },
-    rightTasche: {
+    {
+        id: "rightTasche",
         title:"Right Tasche",
         url: "/assets/tasche-right-",
         format: ".png",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in elit augue",
-        options: ["small", "big", "none"]
+        options: ["none", "small", "big"]
     },
-    base: {
+    {
+        id: "base",
         title:"Base",
         url: "/assets/",
         format: ".png",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in elit augue",
         options: ["base"]
     }
-}
+]

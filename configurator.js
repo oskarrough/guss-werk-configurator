@@ -1,22 +1,27 @@
 const hyper = window.hyperHTML;
+const configurator = document.querySelector("clothes-configurator");
 
-function createMenuElement(selectedOption, featureName, featureObject, updateState) {
-    return hyper()`
-        <div class="Menu">
-            <h5
-                class="${`Menu-title ${featureName}`}"
+function getMenu(feature, renderFct) {
+
+    // get selected value for next select's first option
+    const menuClassName = "." + feature.id + " > select";
+    let select = configurator.shadowRoot.querySelector(menuClassName);
+    let selectValue =  select ? select.value : feature.options[0];
+
+    return hyper(feature)`
+        <div class="${`Menu ${feature.id}`}">
+            <label
+                class="Menu-title"
+                for="Menu-list"
             >
-                ${selectedOption.title}
-            </h5>
-            <hr>
+                ${feature.title}
+            </label>
             <select
-                class="${`Menu-list ${featureName}`}"
-                onchange=${(event) => updateState(event,"value")}
+                class="Menu-list"
+                onchange=${renderFct}
             >
-                <option>${selectedOption.value}</option>
-                ${featureObject.options.filter(option => {
-                    return option != selectedOption.value;
-                })
+                <option value=${selectValue}>${selectValue}</option>
+                ${feature.options.filter( option => { if (selectValue) return option != selectValue; }) // avoid duplicating first option 
                 .map(option => {
                     return hyper()`
                         <option
@@ -32,13 +37,16 @@ function createMenuElement(selectedOption, featureName, featureObject, updateSta
     `;
 }
 
-function createProductOptionElement(option, endpoint) {
+function getProductItem(feature) {
 
+    let select = configurator.shadowRoot.querySelector("." + feature.id + " > select");
+    let option = select ? select.value : feature.options[0];
+    let source = `${feature.url}${option}${feature.format}`;
     return hyper()`
-        <div class="${`ProductItem ${option}`}">
+        <div class="${`ProductItem ${feature.id}`}">
                     <img
-                        class="${`Product-${option}-img`}"
-                        src= ${endpoint}
+                        class="${`Product-${feature.id}-img`}"
+                        src= ${option == "none" ? "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" : source}
                         alt=${option}
                     >
         </div>
@@ -52,17 +60,7 @@ export class Configurator extends HTMLElement {
         this.shadow = this.attachShadow({mode:"open"});
         this.html = hyper(this.shadow);
 
-        this.updateState = this.updateState.bind(this);
-        this.state = {};
-        this.state.featureDescription = "";
-        this.state.selectedOptions = {};
-        Object.keys(this.model).forEach(feature => {
-            this.state.selectedOptions[feature] = {};
-            this.state.selectedOptions[feature].title = this.model[feature].title;
-            this.state.selectedOptions[feature].endpoint = this.model[feature].url;
-            this.state.selectedOptions[feature].value = this.model[feature].options[0];
-            this.state.selectedOptions[feature].format = this.model[feature].format;
-        })
+        this.render = this.render.bind(this);
         this.render();
         this.loadStyle();
     }
@@ -70,18 +68,22 @@ export class Configurator extends HTMLElement {
     set model(featuresObject) {
         this.model = featuresObject;
     }
-
-    updateState(event, property) {
-        const feature = event.target.classList[1];
-
-        if (property === "description") {
-            this.state.featureDescription = this.model[feature].description; 
-        }
-        else{
-            const value = event.target.value;
-            this.state.selectedOptions[feature].value = value;  
-        }
-        this.render();
+  
+    render() {
+        this.html`
+            <div class="Config">
+                <form class="Menus">
+                    <h1 class="Title">Design your custom ${this.product}</h1>
+                    ${this.model.map(feature => { return getMenu(feature, this.render); })}
+                    <div class="BtnBox">
+                        <button class="BtnBox-button" type="submit">Submit your ${this.product}</button>
+                    </div>
+                </form>
+                <div class="Product">
+                    ${this.model.map(feature => { return getProductItem(feature); })}
+                </div>
+            </div>
+        `;
     }
 
     loadStyle() {
@@ -91,27 +93,5 @@ export class Configurator extends HTMLElement {
                 </style>
         `;
         this.shadowRoot.appendChild(style);
-    }
-
-    render() {
-        this.html`
-            <div class="Config">
-                <div class="Menus">
-                    <h1 class="Title">Design your custom ${this.product} </h1>
-                    ${Object.keys(this.model).map(featureName => {
-                        return createMenuElement(this.state.selectedOptions[featureName], featureName, this.model[featureName], this.updateState);
-                    })}
-                </div>
-                <div class="Product">
-                    ${Object.keys(this.state.selectedOptions).filter(option => {
-                        return this.state.selectedOptions[option].value != "" && this.state.selectedOptions[option].value != "none";
-                    })
-                    .map(option => {
-                       let endpoint = `${this.state.selectedOptions[option].endpoint}${this.state.selectedOptions[option].value}${this.state.selectedOptions[option].format}`;
-                        return createProductOptionElement(option, endpoint);
-                    })}
-                </div>
-            </div>
-        `;
     }
 }
