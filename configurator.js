@@ -19,13 +19,12 @@ function getMenu(configurator, feature, renderFct) {
                 class="Menu-list"
                 onchange=${renderFct}
             >
-                <option value=${selectValue}>${selectValue}</option>
-                ${feature.options.filter( option => { if (selectValue) return option != selectValue; }) // avoid duplicating first option 
-                .map(option => {
+                ${feature.options.map(option => {
                     return hyper()`
                         <option
                             class="Menu-list-item"
                             value=${option}
+                            selected=${option === selectValue}
                         >
                             ${option}
                         </option>
