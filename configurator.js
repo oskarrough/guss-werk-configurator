@@ -1,7 +1,6 @@
 const hyper = window.hyperHTML;
-const configurator = document.querySelector("clothes-configurator");
 
-function getMenu(feature, renderFct) {
+function getMenu(configurator, feature, renderFct) {
 
     // get selected value for next select's first option
     const menuClassName = "." + feature.id + " > select";
@@ -37,7 +36,7 @@ function getMenu(feature, renderFct) {
     `;
 }
 
-function getProductItem(feature) {
+function getProductItem(configurator, feature) {
 
     let select = configurator.shadowRoot.querySelector("." + feature.id + " > select");
     let option = select ? select.value : feature.options[0];
@@ -74,13 +73,13 @@ export class Configurator extends HTMLElement {
             <div class="Config">
                 <form class="Menus">
                     <h1 class="Title">Design your custom ${this.product}</h1>
-                    ${this.model.map(feature => { return getMenu(feature, this.render); })}
+                    ${this.model.map(feature => { return getMenu(this, feature, this.render); })}
                     <div class="BtnBox">
                         <button class="BtnBox-button" type="submit">Submit your ${this.product}</button>
                     </div>
                 </form>
                 <div class="Product">
-                    ${this.model.map(feature => { return getProductItem(feature); })}
+                    ${this.model.map(feature => { return getProductItem(this, feature); })}
                 </div>
             </div>
         `;
