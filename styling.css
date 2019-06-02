@@ -26,19 +26,15 @@ img {
 .Title {
     margin: 1rem;
     font-size: 1.7rem;
-    background: transparent;
-    background-color: white;
     padding: 0.9rem;
     
 }
 
-.Title,
 .Menu {
     opacity:0.8;
     transition:  opacity 0.2s ease-in-out;
 }
 
-.Title:hover,
 .Menu:hover {
     opacity:1;
 }
@@ -48,7 +44,6 @@ img {
     padding: 1.5rem;
     font-size: 1.2rem;
     max-height: 100vh;
-
     overflow: scroll;
 }
 
@@ -64,13 +59,11 @@ img {
 
 }
 
-.Title,
 .Menu {
     transition: all 0.2s ease-in-out;
-    overflow:hidden;
+    overflow:auto;
 }
 
-.Title:hover,
 .Menu:hover {
     transform: scale(1.05);
     box-shadow: 0 3px 9px 5px rgba(0,0,0,.04)
@@ -78,15 +71,15 @@ img {
 
 .Menu-title {
     margin:0;
+    margin-bottom:1rem;
+    margin-left:0.5rem;
     font-style: italic;
 }
 
 .Menu-list {
     border:0 !important;
     outline:0;
-    -webkit-appearance: none;
-    margin-bottom: 1rem;
-    /*background:#E4E7E9;*/
+    margin-bottom: 0.5rem;
     background: #E5EAEE;
     border-radius: 1%;
     height: 1.5rem;
@@ -110,7 +103,6 @@ img {
 /* Product */
 
 .Product {
-    flex: 3;
     margin-left: 1rem;
     background-color:#EBEEF3;
     height: 97%;
