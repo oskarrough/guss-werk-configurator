@@ -22,7 +22,7 @@ export const model = [
      },
     {
          id: "hüfteRechts",
-         title: "Hüfte Rechts",
+         title: "Hüftetasche Rechts",
          url: "/assets/hufterechts-",
          format: ".png",
          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in elit augue",
@@ -30,7 +30,7 @@ export const model = [
     },
     {
         id: "hüfteLinks",
-        title: "Hüfte Links",
+        title: "Hüftetasche Links",
         url: "/assets/huftelinks-",
         format: ".png",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in elit augue",
@@ -39,9 +39,9 @@ export const model = [
     {
         id: "front",
         title:"Front Länge",
-        url: "/assets/",
+        url: "/assets/front-",
         format: ".png",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in elit augue",
-        options: ["front"]
+        options: ["lang", "kurz"]
     }
 ]
