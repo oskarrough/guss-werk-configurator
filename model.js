@@ -11,6 +11,7 @@ export const model = [
         format: ".png",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in elit augue",
         options: ["beige","schwarz","braun","grau", "rot"],
+        grouping: ""
     },
     {
         id: "brust",
@@ -19,6 +20,7 @@ export const model = [
         format: ".png",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in elit augue",
         options: ["","kleine Tasche links", "grosse Brusstasche", "kleine Tasche rechts"],
+        grouping: ""
      },
     {
          id: "hüfteRechts",
@@ -26,7 +28,8 @@ export const model = [
          url: "/assets/hufterechts-",
          format: ".png",
          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in elit augue",
-         options: ["","kleine Tasche", "grosse Tasche", "Touchonhalter"]
+         options: ["","kleine Tasche", "grosse Tasche", "Touchonhalter"],
+         grouping: "hüfteLinks"
     },
     {
         id: "hüfteLinks",
@@ -34,7 +37,8 @@ export const model = [
         url: "/assets/huftelinks-",
         format: ".png",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in elit augue",
-        options: ["", "kleine Tasche",  "grosse Tasche", "Touchonhalter"]
+        options: ["", "kleine Tasche",  "grosse Tasche", "Touchonhalter"],
+        grouping: ""
     },
     {
         id: "front",
@@ -42,6 +46,7 @@ export const model = [
         url: "/assets/front-",
         format: ".png",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in elit augue",
-        options: ["lang", "kurz"]
+        options: ["lang"],
+        grouping: ""
     }
 ]
