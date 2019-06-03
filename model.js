@@ -10,46 +10,38 @@ export const model = [
         url: "/assets/neck-",
         format: ".png",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in elit augue",
-        options: ["beige","black","brown","grey", "red"],
+        options: ["beige","schwarz","braun","grau", "rot"],
     },
     {
-        id: "brusttasche",
-        title:"Brusttasche",
-        url: "/assets/brusttasche-",
+        id: "brust",
+        title:"Brust",
+        url: "/assets/brust-",
         format: ".png",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in elit augue",
-        options: ["none","left", "middle", "right"],
+        options: ["","kleine Tasche links", "grosse Brusstasche", "kleine Tasche rechts"],
      },
     {
-        id: "touchonhalter",
-        title: "Touchonhalter",
-        url: "/assets/touchonhalter-",
-        format: ".png",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in elit augue",
-        options: ["none","left", "right"]
+         id: "hüfteRechts",
+         title: "Hüfte Rechts",
+         url: "/assets/hufterechts-",
+         format: ".png",
+         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in elit augue",
+         options: ["","kleine Tasche", "grosse Tasche", "Touchonhalter"]
     },
     {
-        id: "leftTasche",
-        title: "Left Tasche",
-        url: "/assets/tasche-left-",
+        id: "hüfteLinks",
+        title: "Hüfte Links",
+        url: "/assets/huftelinks-",
         format: ".png",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in elit augue",
-        options: ["none", "small", "big"],
+        options: ["", "kleine Tasche",  "grosse Tasche", "Touchonhalter"]
     },
     {
-        id: "rightTasche",
-        title:"Right Tasche",
-        url: "/assets/tasche-right-",
-        format: ".png",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in elit augue",
-        options: ["none", "small", "big"]
-    },
-    {
-        id: "base",
-        title:"Base",
+        id: "front",
+        title:"Front Länge",
         url: "/assets/",
         format: ".png",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in elit augue",
-        options: ["base"]
+        options: ["front"]
     }
 ]

@@ -39,13 +39,14 @@ function getProductItem(configurator, feature) {
 
     let select = configurator.shadowRoot.querySelector("." + feature.id + " > select");
     let option = select ? select.value : feature.options[0];
-    let source = `${feature.url}${option}${feature.format}`;
+    let formattedOption = option.includes(" ") ? option.replace(/ /g, "-") : option;
+    let source = `${feature.url}${formattedOption}${feature.format}`;
     return hyper()`
         <div class="${`ProductItem ${feature.id}`}">
                     <img
                         class="${`Product-${feature.id}-img`}"
-                        src= ${option == "none" ? "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" : source}
-                        alt=${option}
+                        src= ${formattedOption == "" ? "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" : source}
+                        alt=${formattedOption}
                     >
         </div>
     `;
@@ -74,7 +75,7 @@ export class Configurator extends HTMLElement {
                     <h1 class="Title">Design your custom ${this.product}</h1>
                     ${this.model.map(feature => { return getMenu(this, feature, this.render); })}
                     <div class="BtnBox">
-                        <button class="BtnBox-button" type="submit">Submit your ${this.product}</button>
+                        <button class="BtnBox-button" type="submit">Submit ${this.product}</button>
                     </div>
                 </form>
                 <div class="Product">
