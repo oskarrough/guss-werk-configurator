@@ -1,5 +1,12 @@
 const hyper = window.hyperHTML;
 
+function slugify(string) {
+    return string 
+        .replace(/ /g, "-")
+        .trim()
+        .toLowerCase()
+}
+
 function getMenu(configurator, feature, renderFct) {
 
     // get selected value for next select's first option
@@ -39,7 +46,7 @@ function getProductItem(configurator, feature) {
 
     let select = configurator.shadowRoot.querySelector("." + feature.id + " > select");
     let option = select ? select.value : feature.options[0];
-    let formattedOption = option.includes(" ") ? option.replace(/ /g, "-") : option;
+    let formattedOption = option.includes(" ") ? slugify(option) : option;
     let source = `${feature.url}${formattedOption}${feature.format}`;
     return hyper()`
         <div class="${`ProductItem ${feature.id}`}">

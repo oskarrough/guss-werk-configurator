@@ -5,9 +5,9 @@ export const product = "apron";
 export const model = [
 
     {
-        id: "neck",
-        title:"Neck",
-        url: "/assets/neck-",
+        id: "accessoires",
+        title:"Metal accessoires",
+        url: "/assets/accessoires-",
         format: ".png",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in elit augue",
         options: ["beige","schwarz","braun","grau", "rot"],
