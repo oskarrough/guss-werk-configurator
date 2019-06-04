@@ -2,54 +2,67 @@
 
 export const product = "apron";
 
+// data structure is an arr of arrays of objects
 export const model = [
 
-    {
-        id: "neck",
-        title:"Neck",
-        url: "/assets/neck-",
-        format: ".png",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in elit augue",
-        options: ["beige","black","brown","grey", "red"],
-    },
-    {
-        id: "brusttasche",
-        title:"Brusttasche",
-        url: "/assets/brusttasche-",
-        format: ".png",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in elit augue",
-        options: ["none","left", "middle", "right"],
-     },
-    {
-        id: "touchonhalter",
-        title: "Touchonhalter",
-        url: "/assets/touchonhalter-",
-        format: ".png",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in elit augue",
-        options: ["none","left", "right"]
-    },
-    {
-        id: "leftTasche",
-        title: "Left Tasche",
-        url: "/assets/tasche-left-",
-        format: ".png",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in elit augue",
-        options: ["none", "small", "big"],
-    },
-    {
-        id: "rightTasche",
-        title:"Right Tasche",
-        url: "/assets/tasche-right-",
-        format: ".png",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in elit augue",
-        options: ["none", "small", "big"]
-    },
-    {
-        id: "base",
-        title:"Base",
-        url: "/assets/",
-        format: ".png",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in elit augue",
-        options: ["base"]
-    }
+    [
+        {
+            id: "accessoires",
+            title:"Metallaccessoires",
+            url: "/assets/accessoires-",
+            format: ".png",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in elit augue",
+            options: ["beige","schwarz","braun","grau", "rot"],
+        }
+    ],
+    [
+        {
+            id: "brust",
+            title:"Brust",
+            url: "/assets/brust-",
+            format: ".png",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in elit augue",
+            options: ["","kleine Tasche links", "grosse Brusstasche", "kleine Tasche rechts"],
+        }
+    ],
+    [
+        {
+            id:"touchonhalter",
+            title: "Touchonhalter",
+            url: "/assets/touchonhalter-",
+            format: ".png",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in elit augue",
+            options: ["links", "rechts"]
+
+        }
+    ],
+    [ 
+        {
+            id: "hüfteRechts",
+            title: "Hüftetasche Rechts",
+            url: "/assets/hufterechts-",
+            format: ".png",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in elit augue",
+            options: ["","kleine Tasche", "grosse Tasche"],
+        },
+
+        {
+            id: "hüfteLinks",
+            title: "Hüftetasche Links",
+            url: "/assets/huftelinks-",
+            format: ".png",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in elit augue",
+            options: ["", "kleine Tasche",  "grosse Tasche"],
+        }
+    ],
+    [
+        {
+            id: "front",
+            title:"Front Länge",
+            url: "/assets/front-",
+            format: ".png",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in elit augue",
+            options: ["lang"],
+        }
+    ]
 ]
