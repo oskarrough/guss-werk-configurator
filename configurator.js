@@ -7,8 +7,9 @@ function slugify(string) {
         .toLowerCase()
 }
 
-function findSelectedValueFor(configurator, id) {
-    return configurator.shadowRoot.querySelector(id);
+function findSelectedValueFor(configurator, feature) {
+    let select = configurator.shadowRoot.querySelector(`.${feature.id} > select`);
+    return select ? select.value : feature.options[0];
 }
 
 function getMenu(configurator, featureArr, renderFct) {
@@ -20,8 +21,7 @@ function getMenu(configurator, featureArr, renderFct) {
         <div class=${`MenuWrapper ${multipleFeaturesFlag}`}>
             ${featureArr.map(feature => {
                 // get selected value for next select's first option
-                let select = findSelectedValueFor(configurator,`.${feature.id} > select`);
-                let selectValue =  select ? select.value : feature.options[0];
+                let selectValue = findSelectedValueFor(configurator, feature);
                 return hyper(feature)`
                     <div class="${`Menu ${feature.id}`}">
                         <label class="Menu-title" for="Menu-list" >
@@ -53,17 +53,18 @@ function getMenu(configurator, featureArr, renderFct) {
 function getProductItem(configurator, featureArr) {
 
     return featureArr.map(feature => {
-
-        let select = findSelectedValueFor(configurator, `.${feature.id} > select`);
-        let option = select ? select.value : feature.options[0];
-        let formattedOption = option.includes(" ") ? slugify(option) : option;
-        let source = `${feature.url}${formattedOption}${feature.format}`;
+        
+        let option = findSelectedValueFor(configurator, feature);
+        option = slugify(option);
+        let source = `${feature.url}${option}${feature.format}`;
+        let src = option === "" ? "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" : source;
+        //debugger;
         return hyper()`
             <div class="${`ProductItem ${feature.id}`}">
                         <img
                             class="${`Product-${feature.id}-img`}"
-                            src= ${formattedOption == "" ? "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" : source}
-                            alt=${formattedOption}
+                            src= ${src}
+                            alt=${option}
                         >
             </div>
         `;
