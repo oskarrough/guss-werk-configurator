@@ -38,22 +38,23 @@ export const model = [
     ],
     [ 
         {
-            id: "hüfteRechts",
-            title: "Hüftetasche Rechts",
-            url: "/assets/hufterechts-",
-            format: ".png",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in elit augue",
-            options: ["","kleine Tasche", "grosse Tasche"],
-        },
-
-        {
             id: "hüfteLinks",
             title: "Hüftetasche Links",
             url: "/assets/huftelinks-",
             format: ".png",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in elit augue",
             options: ["", "kleine Tasche",  "grosse Tasche"],
+        },
+        {
+            id: "hüfteRechts",
+            title: "Hüftetasche Rechts",
+            url: "/assets/hufterechts-",
+            format: ".png",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in elit augue",
+            options: ["","kleine Tasche", "grosse Tasche"],
         }
+
+        
     ],
     [
         {
