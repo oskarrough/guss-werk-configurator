@@ -7,6 +7,10 @@ function slugify(string) {
         .toLowerCase()
 }
 
+function findSelectedValueFor(configurator, id) {
+    return configurator.shadowRoot.querySelector(id);
+}
+
 function getMenu(configurator, featureArr, renderFct) {
 
     let multipleFeaturesFlag = "";
@@ -16,15 +20,11 @@ function getMenu(configurator, featureArr, renderFct) {
         <div class=${`MenuWrapper ${multipleFeaturesFlag}`}>
             ${featureArr.map(feature => {
                 // get selected value for next select's first option
-                const menuClassName = "." + feature.id + " > select";
-                let select = configurator.shadowRoot.querySelector(menuClassName);
+                let select = findSelectedValueFor(configurator,`.${feature.id} > select`);
                 let selectValue =  select ? select.value : feature.options[0];
-                return hyper()`
+                return hyper(feature)`
                     <div class="${`Menu ${feature.id}`}">
-                        <label
-                            class="Menu-title"
-                            for="Menu-list"
-                        >
+                        <label class="Menu-title" for="Menu-list" >
                             ${feature.title}
                         </label>
                         <select
@@ -54,7 +54,7 @@ function getProductItem(configurator, featureArr) {
 
     return featureArr.map(feature => {
 
-        let select = configurator.shadowRoot.querySelector("." + feature.id + " > select");
+        let select = findSelectedValueFor(configurator, `.${feature.id} > select`);
         let option = select ? select.value : feature.options[0];
         let formattedOption = option.includes(" ") ? slugify(option) : option;
         let source = `${feature.url}${formattedOption}${feature.format}`;
@@ -92,13 +92,13 @@ export class Configurator extends HTMLElement {
             <div class="Config">
                 <form class="Menus">
                     <h1 class="Title">Design your custom ${this.product}</h1>
-                    ${this.model.map(featureArr => { return getMenu(this, featureArr, this.render); })}
+                    ${this.model.map(featureArr => getMenu(this, featureArr, this.render))}
                     <div class="BtnBox">
                         <button class="BtnBox-button" type="submit">Submit ${this.product}</button>
                     </div>
                 </form>
                 <div class="Product">
-                    ${this.model.map(featureArr => { return getProductItem(this, featureArr); })}
+                    ${this.model.map(featureArr => getProductItem(this, featureArr))}
                 </div>
             </div>
         `;
