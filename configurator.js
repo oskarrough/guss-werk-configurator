@@ -114,3 +114,4 @@ export class Configurator extends HTMLElement {
         this.shadowRoot.appendChild(style);
     }
 }
+
