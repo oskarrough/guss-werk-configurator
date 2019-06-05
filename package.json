@@ -1,10 +1,14 @@
 {
   "name": "clothes-configurator",
+  "jest": {
+    "verbose": true,
+    "preset": "jest-puppeteer"
+  },
   "version": "1.0.0",
   "description": "A custom element to create personalized clothes",
   "scripts": {
     "start": "browser-sync . --watch --single",
-    "test": "karma start karma.conf.js"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -17,16 +21,13 @@
   },
   "homepage": "https://github.com/GregVes/clothes-configurator#readme",
   "devDependencies": {
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
-    "jasmine-core": "^3.4.0",
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-transform-modules-commonjs": "^7.4.4",
     "jest": "^24.8.0",
-    "karma": "^4.1.0",
-    "karma-chrome-launcher": "^2.2.0",
-    "karma-coverage": "^1.1.2",
-    "karma-jasmine": "^2.0.1"
+    "jest-puppeteer": "^4.2.0"
   },
   "dependencies": {
-    "@babel/cli": "^7.4.4",
-    "@babel/core": "^7.4.5"
+    "puppeteer": "^1.17.0"
   }
 }
