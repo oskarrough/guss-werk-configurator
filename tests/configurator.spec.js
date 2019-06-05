@@ -1,5 +1,4 @@
 const puppeteer = require('puppeteer');
-/*const Configurator = require('./configurator')*/
 
 describe("Test clothes-configurator", () => {
   beforeAll( async () => {

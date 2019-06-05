@@ -58,8 +58,7 @@ function getProductItem(configurator, featureArr) {
         option = slugify(option);
         let source = `${feature.url}${option}${feature.format}`;
         let src = option === "" ? "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" : source;
-        //debugger;
-        return hyper()`
+        return hyper(feature, ':option')`
             <div class="${`ProductItem ${feature.id}`}">
                         <img
                             class="${`Product-${feature.id}-img`}"
