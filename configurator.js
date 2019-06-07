@@ -18,57 +18,57 @@ function getMenu(configurator, featureArr, renderFct) {
     if (featureArr.length > 1) multipleFeaturesFlag = "Flex";
 
     return hyper(featureArr)`
-        <div class=${`MenuWrapper ${multipleFeaturesFlag}`}>
-            ${featureArr.map(feature => {
-                // get selected value for next select's first option
-                let selectValue = findSelectedValueFor(configurator, feature);
-                return hyper(feature)`
-                    <div class="${`Menu ${feature.id}`}">
-                        <label class="Menu-title" for="Menu-list" >
-                            ${feature.title}
-                        </label>
-                        <select
-                            class="Menu-list"
-                            onchange=${renderFct}
-                        >
-                            ${feature.options.map(option => {
-                                return hyper()`
-                                    <option
-                                        class="Menu-list-item"
-                                        value=${option}
-                                        selected=${option === selectValue}
-                                    >
-                                        ${option}
-                                    </option>
-                                `;
-                            })}
-                        <select>
-                    </div>  
+    <div class=${`MenuWrapper ${multipleFeaturesFlag}`}>
+      ${featureArr.map(feature => {
+        // get selected value for selected option
+        let selectValue = findSelectedValueFor(configurator, feature);
+        return hyper(feature)`
+          <div class="${`Menu ${feature.id}`}">
+            <label class="Menu-title" for="Menu-list" >
+              ${feature.title}
+            </label>
+            <select
+              class="Menu-list"
+              onchange=${renderFct}
+            >
+              ${feature.options.map(option => {
+                return hyper()`
+                  <option
+                    class="Menu-list-item"
+                    value=${option}
+                    selected=${option === selectValue}
+                  >
+                    ${option}
+                  </option>
                 `;
-            })}
-        </div>
-    `;
+              })}
+            </select>
+          </div>  
+        `;
+      })}
+    </div>
+  `;
 }
 
-function getProductItem(configurator, featureArr) {
+function getProductItem(configurator, baseURL, featureArr) {
 
     return featureArr.map(feature => {
         
         let option = findSelectedValueFor(configurator, feature);
         option = slugify(option);
-        let source = `${feature.url}${option}${feature.format}`;
+        let source = `${baseURL}${feature.url}${option}${feature.format}`;
         let src = option === "" ? "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" : source;
         return hyper(feature, ':option')`
-            <div class="${`ProductItem ${feature.id}`}">
-                        <img
-                            class="${`Product-${feature.id}-img`}"
-                            src= ${src}
-                            alt=${option}
-                        >
-            </div>
+          <div class="${`ProductItem ${feature.id}`}">
+            <img
+              class="${`Product-${feature.id}-img`}"
+              src= ${src}
+              alt=${option}
+            >
+          </div>
         `;
+
     })
-    
 }
 
 export class Configurator extends HTMLElement {
@@ -91,14 +91,14 @@ export class Configurator extends HTMLElement {
         this.html`
             <div class="Config">
                 <form class="Menus">
-                    <h1 class="Title">Design your custom ${this.product}</h1>
-                    ${this.model.map(featureArr => getMenu(this, featureArr, this.render))}
+                    <h1 class="Title">Design your custom ${this.model.product}</h1>
+                    ${this.model.features.map(featureArr => getMenu(this, featureArr, this.render))}
                     <div class="BtnBox">
                         <button class="BtnBox-button" type="submit">Submit ${this.product}</button>
                     </div>
                 </form>
                 <div class="Product">
-                    ${this.model.map(featureArr => getProductItem(this, featureArr))}
+                    ${this.model.features.map(featureArr => getProductItem(this, this.model.imageFolder, featureArr))}
                 </div>
             </div>
         `;

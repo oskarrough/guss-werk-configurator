@@ -1,11 +1,12 @@
-export const product = 'LSA Basis'
-
-export const model = [
+export default {
+  name: "LSA Basis",
+  imageFolder: '/assets/lsa-basis/',
+  features: [
   [
     {
       id: 'accessoires',
       title: 'Metallaccessoires',
-      url: '/assets/lsa-basis/neck-',
+      url: 'neck-',
       format: '.png',
       options: [
         'gk-01-braun',
@@ -22,7 +23,7 @@ export const model = [
     {
       id: 'brust',
       title: 'Brust',
-      url: '/assets/lsa-basis/brust-',
+      url: 'brust-',
       format: '.png',
       options: ['', 'gross mitte', 'klein links', 'klein rechts']
     }
@@ -31,7 +32,7 @@ export const model = [
     {
       id: 'touchon',
       title: 'Touchonhalter',
-      url: '/assets/lsa-basis/touchon-',
+      url: 'touchon-',
       format: '.png',
       options: ['', 'links', 'rechts']
     }
@@ -40,14 +41,14 @@ export const model = [
     {
       id: 'huefteLinks',
       title: 'Hüftetasche Links',
-      url: '/assets/lsa-basis/huefte-links-',
+      url: 'huefte-links-',
       format: '.png',
       options: ['', 'klein', 'gross']
     },
     {
       id: 'huefteRechts',
       title: 'Hüftetasche Rechts',
-      url: '/assets/lsa-basis/huefte-rechts-',
+      url: 'huefte-rechts-',
       format: '.png',
       options: ['', 'klein', 'gross']
     }
@@ -56,9 +57,10 @@ export const model = [
     {
       id: 'front',
       title: 'Front',
-      url: '/assets/lsa-basis/base-',
+      url: 'base-',
       format: '.jpg',
       options: ['lang', 'kurz']
     }
   ]
-]
+  ]
+}
