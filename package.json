@@ -20,14 +20,6 @@
     "url": "https://github.com/GregVes/clothes-configurator/issues"
   },
   "homepage": "https://github.com/GregVes/clothes-configurator#readme",
-  "devDependencies": {
-    "@babel/cli": "^7.4.4",
-    "@babel/core": "^7.4.5",
-    "@babel/plugin-transform-modules-commonjs": "^7.4.4",
-    "jest": "^24.8.0",
-    "jest-puppeteer": "^4.2.0"
-  },
-  "dependencies": {
-    "puppeteer": "^1.17.0"
-  }
+  "devDependencies": {},
+  "dependencies": {}
 }
