@@ -7,7 +7,6 @@ export const model = [
       title: 'Metallaccessoires',
       url: '/assets/lsa-basis/neck-',
       format: '.png',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in elit augue',
       options: [
         'gk-01-braun',
         'gk-01-cognac',
@@ -25,7 +24,6 @@ export const model = [
       title: 'Brust',
       url: '/assets/lsa-basis/brust-',
       format: '.png',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in elit augue',
       options: ['', 'gross mitte', 'klein links', 'klein rechts']
     }
   ],
@@ -35,7 +33,6 @@ export const model = [
       title: 'Touchonhalter',
       url: '/assets/lsa-basis/touchon-',
       format: '.png',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in elit augue',
       options: ['', 'links', 'rechts']
     }
   ],
@@ -45,7 +42,6 @@ export const model = [
       title: 'Hüftetasche Links',
       url: '/assets/lsa-basis/huefte-links-',
       format: '.png',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in elit augue',
       options: ['', 'klein', 'gross']
     },
     {
@@ -53,7 +49,6 @@ export const model = [
       title: 'Hüftetasche Rechts',
       url: '/assets/lsa-basis/huefte-rechts-',
       format: '.png',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in elit augue',
       options: ['', 'klein', 'gross']
     }
   ],
@@ -62,8 +57,7 @@ export const model = [
       id: 'front',
       title: 'Front',
       url: '/assets/lsa-basis/base-',
-      format: '.png',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in elit augue',
+      format: '.jpg',
       options: ['lang', 'kurz']
     }
   ]
