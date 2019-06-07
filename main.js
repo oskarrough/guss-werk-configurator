@@ -1,4 +1,5 @@
-import { model, product } from './model.js'
+// import { model, product } from './model.js'
+import { model, product } from './model-lsa.js'
 import { Configurator } from './configurator.js';
 
 const configurator = document.querySelector("clothes-configurator");
