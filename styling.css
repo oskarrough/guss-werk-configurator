@@ -1,157 +1,150 @@
 
 * {
-    box-sizing: border-box;
-    font-family: system-ui, segoe ui, sans-serif;
+  box-sizing: border-box;
+  font-family: system-ui, segoe ui, sans-serif;
 
 }
 
 body {
-    margin:0;
+  margin:0;
 }
 
 img {
-    max-height: 100vh;
-    max-width: 100%;
-    vertical-align: top;
-    /*filter: drop-shadow(0px 0px 10px pink);*/
+  max-height: 100vh;
+  max-width: 100%;
+  vertical-align: top;
 }
 
 clothes-configurator {
-    display: block;
+  display: block;
 }
 
 /* configurator container */
 
 .Config {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 /* Color menu */
 
 .ColorMenu {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 .ColorMenu-ItemWrapper {
-    display: flex;
-    flex-direction: column;
-    margin:0.5rem;
+  display: flex;
+  flex-direction: column;
+  margin:0.5rem;
 }
 
 .ColorMenu-ItemWrapper-circle:before {
-    content: ' \25CF';
-    font-size: 1.5rem;
+  content: ' \25CF';
+  font-size: 1.5rem;
 }
 
 .ColorMenu-ItemWrapper-circle {
-    border-radius: 50%;
+  border-radius: 50%;
 }
 
 .ColorMenu-ItemWrapper-text {
-    font-size:0.8rem;
-    margin: 0;
-    margin-top:0.2rem;
-    text-align: center;
+  font-size:0.8rem;
+  margin: 0;
+  margin-top:0.2rem;
+  text-align: center;
 }
 
 /* Menus */
 
 .Title {
-    margin: 1rem;
-    font-size: 1.7rem;
-    padding: 0.2rem;
-    text-align: center;
-    
+  margin: 1rem;
+  font-size: 1.7rem;
+  padding: 0.2rem;
+  text-align: center;
 }
 
 
 .Menus {
-    background-color:#EBEEF3;
-    font-size: 1.2rem;
-    max-height: 100vh;
-    overflow: auto;
+  background-color:#EBEEF3;
+  font-size: 1.2rem;
+  max-height: 100vh;
+  overflow: auto;
 }
 
 .Menu {
-    display: flex;
-    flex-direction: column;
-    border-radius: 3px;
-    padding: 0.3rem 1rem;
-    background: white;
-    overflow: auto;
-    opacity: 0.8;
-    transition: all 0.2s ease-in-out;
-
-    /*margin: 0.7rem;*/
-    margin: 0.7rem 0.9rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 3px;
+  padding: 0.3rem 1rem;
+  background: white;
+  overflow: auto;
+  opacity: 0.8;
+  transition: all 0.2s ease-in-out;
+  margin: 0.7rem 0.9rem;
 }
 
 .MenuWrapper.Flex {
-    display:flex;
-    justify-content: space-between;
+  display:flex;
+  justify-content: space-between;
 }
 
 .MenuWrapper.Flex > .Menu {
-    flex-basis: 50%;
-    margin:0 0.8rem;
-    margin-right:0;
+  flex-basis: 50%;
+  margin:0 0.8rem;
+  margin-right:0;
 }
 
 .MenuWrapper.Flex .Menu:last-child{
-    margin-right:0.8rem;
+  margin-right:0.8rem;
 }
 
 .Menu:hover {
-    /*transform: scale(1.05);*/
-    box-shadow: 0 3px 9px 5px rgba(0,0,0,.04);
-    opacity:1;
+  box-shadow: 0 3px 9px 5px rgba(0,0,0,.04);
+  opacity:1;
 }
 
 .Menu-title {
-    margin:0;
-    margin-bottom:0.3rem;
-    text-align: center;
-    /*font-style: italic;*/
-    font-size: 0.9rem;
+  margin:0;
+  margin-bottom:0.3rem;
+  text-align: center;
+  font-size: 0.9rem;
 }
 
 .Menu-list {
-    border:0 !important;
-    background: #E5EAEE;
-    border-radius: 0.3rem;
-    height: 1.5rem;
-    display: flex;
-    justify-content: center;
-    padding-left: 0.4rem;
-    margin-bottom: 0.5rem;
-    font-size:0.9rem;
+  border:0 !important;
+  background: #E5EAEE;
+  border-radius: 0.3rem;
+  height: 1.5rem;
+  display: flex;
+  justify-content: center;
+  padding-left: 0.4rem;
+  margin-bottom: 0.5rem;
+  font-size:0.9rem;
 }
 
 .BtnBox {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .BtnBox {
-    margin-bottom:1rem;
+  margin-bottom:1rem;
 }
 
 .BtnBox-button {
-    border: none;
-    border-radius: 3px;
-    font-size: 1rem;
-    transition: all 0.2s ease-in-out;
-    padding: 0.6rem;
-    width: 92%;
-    opacity: 0.8;
+  border: none;
+  border-radius: 3px;
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
+  padding: 0.6rem;
+  width: 92%;
+  opacity: 0.8;
 }
 
 .BtnBox-button:hover {
-    box-shadow: 0 3px 9px 5px rgba(0,0,0,.04);
-    opacity:1;
-
+  box-shadow: 0 3px 9px 5px rgba(0,0,0,.04);
+  opacity:1;
 }
 
 
@@ -162,44 +155,37 @@ clothes-configurator {
 .Product,
 .Menu-list,
 .BtnBox-buton {
-    box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+  box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
 }
 
 /* Mask */
 
 .Mask {
-
-    mix-blend-mode: multiply;
-    z-index: 3;
+  mix-blend-mode: multiply;
+  z-index: 3;
 }
 
 /* Product */
 
 .Product {
-    position: relative;
-    margin-left: 1rem;
-    background-color:#EBEEF3;
-    height: 97%;
+  position: relative;
+  margin-left: 1rem;
+  background-color:#EBEEF3;
+  height: 97%;
 }
 
 .ProductItem {
-    position: absolute;
+  position: absolute;
 }
 
 .ProductItem:last-child {
-    position: static;
+  position: static;
 }
 
 .FeatureDescription {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-color: #ddd;
-}
-
-/* mobile and tablet */ 
-
-@media (max-width: 760px) {
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #ddd;
 }
