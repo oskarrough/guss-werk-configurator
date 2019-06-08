@@ -71,6 +71,21 @@ function getProductItem(configurator, baseURL, featureArr) {
     })
 }
 
+function getColorMenu(colorsArr) {
+  return hyper(colorsArr)` 
+    <div class="ColorMenu">
+      ${colorsArr.map( color => {
+        return hyper()`
+          <div class="ColorMenu-ItemWrapper">
+            <button class="ColorMenu-ItemWrapper-circle" style=${`filter: ${color.filter} `} ></button>
+            <p class="ColorMenu-ItemWrapper-text">${color.name}</p>
+          </div>
+        `;
+      })}
+    </div>
+  `;
+}
+
 export class Configurator extends HTMLElement {
 
     constructor() {
@@ -92,12 +107,14 @@ export class Configurator extends HTMLElement {
             <div class="Config">
                 <form class="Menus">
                     <h1 class="Title">Design your custom ${this.model.product}</h1>
+                    ${getColorMenu(this.model.colors)}
                     ${this.model.features.map(featureArr => getMenu(this, featureArr, this.render))}
                     <div class="BtnBox">
                         <button class="BtnBox-button" type="submit">Submit ${this.product}</button>
                     </div>
                 </form>
                 <div class="Product">
+                    <img src="./assets/lsa-basis/base-mask-lang.png" class="Mask ProductItem">
                     ${this.model.features.map(featureArr => getProductItem(this, this.model.imageFolder, featureArr))}
                 </div>
             </div>

@@ -1,6 +1,24 @@
 export default {
   name: "LSA Basis",
   imageFolder: '/assets/lsa-basis/',
+  colors: [
+        {
+          name: 'green',
+          filter: 'invert(52%) sepia(4%) saturate(2776%) hue-rotate(18deg) brightness(186%) contrast(130%)', // css
+        },
+        {
+          name: 'red',
+          filter: 'invert(52%) sepia(4%) saturate(2776%) hue-rotate(18deg) brightness(186%) contrast(130%)', // to be changed 
+        },
+        {
+          name: 'blue',
+          filter: 'invert(52%) sepia(4%) saturate(2776%) hue-rotate(18deg) brightness(186%) contrast(130%)', // to be changed
+        },
+        {
+          name: 'yellow',
+          filter: 'invert(52%) sepia(4%) saturate(2776%) hue-rotate(18deg) brightness(186%) contrast(130%)', // to be changed
+        }
+  ],
   features: [
   [
     {
