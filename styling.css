@@ -47,7 +47,6 @@ clothes-configurator {
 
 .ColorMenu-ItemWrapper-circle {
     border-radius: 50%;
-    background-color: #000;
 }
 
 .ColorMenu-ItemWrapper-text {
@@ -170,9 +169,8 @@ clothes-configurator {
 
 .Mask {
 
-    background-blend-mode: multiply;
+    mix-blend-mode: multiply;
     z-index: 3;
-    filter: invert(52%) sepia(4%) saturate(2776%) hue-rotate(18deg) brightness(186%) contrast(130%);
 }
 
 /* Product */

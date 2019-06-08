@@ -60,14 +60,9 @@ function getProductItem(configurator, baseURL, featureArr) {
         let src = option === "" ? "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" : source;
         return hyper(feature, ':option')`
           <div class="${`ProductItem ${feature.id}`}">
-            <img
-              class="${`Product-${feature.id}-img`}"
-              src= ${src}
-              alt=${option}
-            >
+            <img src= ${src} alt=${option} >
           </div>
         `;
-
     })
 }
 
@@ -77,13 +72,24 @@ function getColorMenu(colorsArr) {
       ${colorsArr.map( color => {
         return hyper()`
           <div class="ColorMenu-ItemWrapper">
-            <button class="ColorMenu-ItemWrapper-circle" style=${`filter: ${color.filter} `} ></button>
+            <button class="ColorMenu-ItemWrapper-circle" data-filter=${color.filter} onclick=${changeColorMask}></button>
             <p class="ColorMenu-ItemWrapper-text">${color.name}</p>
           </div>
         `;
       })}
     </div>
   `;
+}
+
+function changeColorMask(event) {
+  event.preventDefault();
+
+  const filter = event.target.dataset.filter;
+  const configurator = document.querySelector("clothes-configurator")
+  const mask = configurator.shadowRoot.querySelector(".Mask");
+
+  mask.style.filter = filter;
+
 }
 
 export class Configurator extends HTMLElement {
@@ -114,7 +120,7 @@ export class Configurator extends HTMLElement {
                     </div>
                 </form>
                 <div class="Product">
-                    <img src="./assets/lsa-basis/base-mask-lang.png" class="Mask ProductItem">
+                    <img src="./assets/lsa-basis/base-mask-lang.png" class="Mask ProductItem" style=${`filter: ${this.model.colors[0].filter}`}>
                     ${this.model.features.map(featureArr => getProductItem(this, this.model.imageFolder, featureArr))}
                 </div>
             </div>
