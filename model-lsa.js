@@ -3,6 +3,10 @@ export default {
   imageFolder: '/assets/lsa-basis/',
   colors: [
     {
+      name: 'default',
+      filter: "none",
+    },
+    {
       name: 'green',
       filter: 'invert(52%) sepia(4%) saturate(2776%) hue-rotate(18deg) brightness(186%) contrast(130%)', // css
     },

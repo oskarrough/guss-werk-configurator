@@ -64,9 +64,16 @@ function getProductItem(configurator, baseURL, featureArr) {
 function getColorElement(configurator, colorObject) {
   function changeColorMask(configurator, event){
     event.preventDefault();
-
     const filter = event.target.dataset.filter;
     const mask = configurator.shadowRoot.querySelector(".Mask");
+    const defaultBtn = configurator.shadowRoot.querySelector(".ColorMenu-itemWrapper-button"); // first btn in the list
+
+    if (event.target === defaultBtn) {
+      mask.classList.remove("is-active");
+      return false;
+    }
+
+    mask.classList.add("is-active");
     mask.style.filter = filter;
 
   }
@@ -95,21 +102,24 @@ export class Configurator extends HTMLElement {
     }
   
     render() {
+      /*const colorsObjects = this.model.colors.filter(color => {
+        return color.name !== 'default';
+      })*/
       this.html`
         <div class="Config">
           <form class="Menus">
             <h1 class="Title">Design your custom ${this.model.product}</h1>
             <div class="ColorMenu">
-              ${this.model.colors.map( color => getColorElement(this, color) )}
+              ${this.model.colors.map( color => getColorElement( this, color ))}
             </div>
-            ${this.model.features.map(featureArr => getMenu(this, featureArr, this.render))}
+            ${this.model.features.map( featureArr => getMenu(this, featureArr, this.render ))}
             <div class="BtnBox">
               <button class="BtnBox-button" type="submit">Submit ${this.product}</button>
             </div>
           </form>
           <div class="Product">
             <img src="./assets/lsa-basis/base-mask-lang.png" class="ProductItem Mask" style=${`filter: ${this.model.colors[0].filter}`} alt=${this.model.colors[0].name}>
-            ${this.model.features.map(featureArr => getProductItem(this, this.model.imageFolder, featureArr))}
+            ${this.model.features.map(featureArr => getProductItem( this, this.model.imageFolder, featureArr ))}
           </div>
         </div>
       `;
