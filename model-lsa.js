@@ -58,14 +58,14 @@ export default {
   [
     {
       id: 'huefteLinks',
-      title: 'Hüftetasche Links',
+      title: 'Hüftetasche links',
       url: 'huefte-links-',
       format: '.png',
       options: ['', 'klein', 'gross']
     },
     {
       id: 'huefteRechts',
-      title: 'Hüftetasche Rechts',
+      title: 'Hüftetasche rechts',
       url: 'huefte-rechts-',
       format: '.png',
       options: ['', 'klein', 'gross']

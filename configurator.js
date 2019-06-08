@@ -8,14 +8,11 @@ function slugify(string) {
 }
 
 function findSelectedValueFor(configurator, feature) {
-  
   let select = configurator.shadowRoot.querySelector(`.${feature.id} > select`);
   return select ? select.value : feature.options[0];
-
 }
 
 function getMenu(configurator, featureArr, renderFct) {
-
   let multipleFeaturesFlag = "";
   if (featureArr.length > 1) multipleFeaturesFlag = "Flex";
 
@@ -53,46 +50,32 @@ function getMenu(configurator, featureArr, renderFct) {
 }
 
 function getProductItem(configurator, baseURL, featureArr) {
-
   return featureArr.map(feature => {
-
     let option = findSelectedValueFor(configurator, feature);
     option = slugify(option);
     let source = `${baseURL}${feature.url}${option}${feature.format}`;
     let src = option === "" ? "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" : source;
     return hyper(feature, ':option')`
-      <div class="${`ProductItem ${feature.id}`}">
-        <img src= ${src} alt=${option} >
-      </div>
+        <img class="${`ProductItem ${feature.id}`}" src= ${src} alt=${option} >
     `;
-
   })
 }
 
-function getColorMenu(colorsArr) {
-  return hyper(colorsArr)` 
-    <div class="ColorMenu">
-      ${colorsArr.map( color => {
-        return hyper()`
-          <div class="ColorMenu-ItemWrapper">
-            <button class="ColorMenu-ItemWrapper-circle" data-filter=${color.filter} onclick=${changeColorMask}></button>
-            <p class="ColorMenu-ItemWrapper-text">${color.name}</p>
-          </div>
-        `;
-      })}
+function getColorElement(configurator, colorObject) {
+  function changeColorMask(configurator, event){
+    event.preventDefault();
+
+    const filter = event.target.dataset.filter;
+    const mask = configurator.shadowRoot.querySelector(".Mask");
+    mask.style.filter = filter;
+
+  }
+  return hyper(colorObject)` 
+    <div class="ColorMenu-itemWrapper">
+      <button class="ColorMenu-itemWrapper-button" data-filter=${colorObject.filter} onclick=${ (event) => changeColorMask(configurator,event)}></button>
+      <p class="ColorMenu-itemWrapper-text">${colorObject.name}</p>
     </div>
   `;
-}
-
-function changeColorMask(event) {
-  event.preventDefault();
-
-  const filter = event.target.dataset.filter;
-  const configurator = document.querySelector("clothes-configurator")
-  const mask = configurator.shadowRoot.querySelector(".Mask");
-
-  mask.style.filter = filter;
-
 }
 
 export class Configurator extends HTMLElement {
@@ -116,14 +99,16 @@ export class Configurator extends HTMLElement {
         <div class="Config">
           <form class="Menus">
             <h1 class="Title">Design your custom ${this.model.product}</h1>
-            ${getColorMenu(this.model.colors)}
+            <div class="ColorMenu">
+              ${this.model.colors.map( color => getColorElement(this, color) )}
+            </div>
             ${this.model.features.map(featureArr => getMenu(this, featureArr, this.render))}
             <div class="BtnBox">
               <button class="BtnBox-button" type="submit">Submit ${this.product}</button>
             </div>
           </form>
           <div class="Product">
-            <img src="./assets/lsa-basis/base-mask-lang.png" class="Mask ProductItem" style=${`filter: ${this.model.colors[0].filter}`}>
+            <img src="./assets/lsa-basis/base-mask-lang.png" class="ProductItem Mask" style=${`filter: ${this.model.colors[0].filter}`} alt=${this.model.colors[0].name}>
             ${this.model.features.map(featureArr => getProductItem(this, this.model.imageFolder, featureArr))}
           </div>
         </div>

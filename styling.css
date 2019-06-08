@@ -32,27 +32,27 @@ clothes-configurator {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  text-align: center;
+  font-size:0.8rem;
 }
-.ColorMenu-ItemWrapper {
-  display: flex;
-  flex-direction: column;
+.ColorMenu-itemWrapper {
   margin:0.5rem;
 }
 
-.ColorMenu-ItemWrapper-circle:before {
+.ColorMenu-itemWrapper-button:before {
   content: ' \25CF';
   font-size: 1.5rem;
 }
 
-.ColorMenu-ItemWrapper-circle {
+.ColorMenu-itemWrapper-button {
   border-radius: 50%;
 }
 
-.ColorMenu-ItemWrapper-text {
-  font-size:0.8rem;
+.ColorMenu-itemWrapper-text {
+
   margin: 0;
   margin-top:0.2rem;
-  text-align: center;
+;
 }
 
 /* Menus */
