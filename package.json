@@ -7,8 +7,7 @@
   "version": "1.0.0",
   "description": "A custom element to create personalized clothes",
   "scripts": {
-    "start": "browser-sync . --watch --single",
-    "test": "jest"
+    "start": "browser-sync . --watch --single"
   },
   "repository": {
     "type": "git",
