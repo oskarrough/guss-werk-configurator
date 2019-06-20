@@ -86,6 +86,10 @@ clothes-configurator {
   overflow: auto;
 }
 
+.MenuWrapper {
+  margin-bottom: 1rem;
+}
+
 .Menu {
   display: flex;
   flex-direction: column;
@@ -95,7 +99,8 @@ clothes-configurator {
   overflow: auto;
   opacity: 0.8;
   transition: all 0.2s ease-in-out;
-  margin: 0.7rem 0.9rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .MenuWrapper.Flex {
@@ -105,12 +110,14 @@ clothes-configurator {
 
 .MenuWrapper.Flex > .Menu {
   flex-basis: 50%;
-  margin:0 0.8rem;
-  margin-right:0;
+}
+
+.MenuWrapper.Flex .Menu:first-child{
+  margin-right: 0.5rem;
 }
 
 .MenuWrapper.Flex .Menu:last-child{
-  margin-right:0.8rem;
+  margin-left: 0.5rem;
 }
 
 .Menu:hover {
