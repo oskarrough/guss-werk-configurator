@@ -77,9 +77,14 @@ function getColorElement(configurator, colorObject) {
     mask.style.filter = filter;
 
   }
-  return hyper(colorObject)` 
+  return hyper(colorObject)`
     <div class="ColorMenu-itemWrapper">
-      <button class="ColorMenu-itemWrapper-button" data-filter=${colorObject.filter} onclick=${ (event) => changeColorMask(configurator,event)}></button>
+      <button class="ColorMenu-itemWrapper-button"
+        data-filter=${colorObject.filter}
+        onclick=${ (event) => changeColorMask(configurator,event)}
+      >
+      <span class="ColorMenu-buttonFilter" style="${'filter: ' + colorObject.filter}"></span>
+      </button>
       <p class="ColorMenu-itemWrapper-text">${colorObject.name}</p>
     </div>
   `;

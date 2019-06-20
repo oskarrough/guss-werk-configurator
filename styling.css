@@ -43,13 +43,30 @@ clothes-configurator {
   width:2rem;
   height: 2rem;
   border-radius: 50%;
+  background: #6b6b7b;
+  position: relative;
+}
+
+.ColorMenu-buttonFilter {
+  mix-blend-mode: multiply;
+  position: absolute;
+  top: 0;
+  left:0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  background: black;
+  border-radius: 50%;
+}
+
+.ColorMenu-itemWrapper:first-child .ColorMenu-buttonFilter {
+  background: #6b6b7b;
+  mix-blend-mode: unset;
 }
 
 .ColorMenu-itemWrapper-text {
-
   margin: 0;
   margin-top:0.2rem;
-;
 }
 
 /* Menus */
