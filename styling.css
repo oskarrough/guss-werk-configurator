@@ -121,7 +121,7 @@ clothes-configurator {
 }
 
 .Menu:hover {
-  box-shadow: 0 3px 9px 5px rgba(0,0,0,.04);
+  /*box-shadow: 0 3px 9px 5px rgba(0,0,0,.04);*/
   opacity:1;
 }
 
@@ -176,7 +176,7 @@ clothes-configurator {
 .Product,
 .Menu-list,
 .BtnBox-buton {
-  box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+  /*box-shadow: 0 1px 0 1px rgba(0,0,0,.04);*/
 }
 
 /* Mask */
