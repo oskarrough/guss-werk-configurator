@@ -1,7 +1,7 @@
 const hyper = window.hyperHTML;
 
 function slugify(string) {
-  return string 
+  return string
     .replace(/ /g, "-")
     .trim()
     .toLowerCase()
@@ -42,7 +42,7 @@ function getMenu(configurator, featureArr, renderFct) {
               `;
             })}
           </select>
-        </div>  
+        </div>
       `;
     })}
   </div>
