@@ -105,7 +105,7 @@ export class Configurator extends HTMLElement {
     set model(featuresObject) {
       this.model = featuresObject;
     }
-  
+
     render() {
       /*const colorsObjects = this.model.colors.filter(color => {
         return color.name !== 'default';
@@ -113,11 +113,25 @@ export class Configurator extends HTMLElement {
       this.html`
         <div class="Config">
           <form class="Menus">
-            <h1 class="Title">Design your custom ${this.model.product}</h1>
+            <h1 class="Title">${this.model.name}</h1>
+            ${this.model.features.map( featureArr => getMenu(this, featureArr, this.render ))}
             <div class="ColorMenu">
               ${this.model.colors.map( color => getColorElement( this, color ))}
             </div>
-            ${this.model.features.map( featureArr => getMenu(this, featureArr, this.render ))}
+            <div style="display: none">
+              <label>
+                Email
+                <input type="email" placeholder="Your email">
+              </label>
+              <label>
+                Anzahl
+                <input type="number" min="10">
+              </label>
+              <label>
+                Ansprechpartner
+                <textarea></textarea>
+              </label>
+            </div>
             <div class="BtnBox">
               <button class="BtnBox-button" type="submit">Submit ${this.product}</button>
             </div>
