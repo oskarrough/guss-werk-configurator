@@ -22,16 +22,21 @@ export default {
 			{
 				id: 'accessoires',
 				title: 'Gurte',
-				url: 'neck-',
+				url: 'gurt-',
 				format: '.png',
 				options: [
-					'gk-01-braun',
-					'gk-01-cognac',
-					'gk-01-schwarz',
-					'gk-02-braun',
-					'gk-02-schwarz',
-					'gt-03-grau-melange',
-					'gt-03-rot'
+					'GL02 braun',
+					'GL02 cognac',
+					'GL02 schwarz',
+					'GK01 braun',
+					'GK01 cognac',
+					'GK01 schwarz',
+					'GK02 braun',
+					'GK02 cognac',
+					'GK02 schwarz',
+					'GT03 grau-melange',
+					'GT03 rot',
+					'GT03 schwarz'
 				]
 			}
 		],
@@ -52,14 +57,14 @@ export default {
 				title: 'Touchonhalter links',
 				url: 'touchon-links-',
 				format: '.png',
-				options: ['', 'touchon']
+				options: ['', 'Touchon']
 			},
 			{
 				id: 'TouchonRechts',
 				title: 'Touchonhalter rechts',
 				url: 'touchon-rechts-',
 				format: '.png',
-				options: ['', 'touchon']
+				options: ['', 'Touchon']
 			}
 		],
 
@@ -84,7 +89,7 @@ export default {
 			{
 				id: 'front',
 				title: 'Front',
-				url: 'base-',
+				url: 'lsa-',
 				format: '.jpg',
 				options: ['lang', 'kurz']
 			}
