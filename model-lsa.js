@@ -8,11 +8,11 @@ export default {
 			filter: 'none'
 		},
 		{
-			name: 'green',
-			filter: 'invert(52%) sepia(4%) saturate(2776%) hue-rotate(18deg) brightness(186%) contrast(130%)'
+			name: 'grün',
+			filter: 'invert(52%) sepia(4%) saturate(100%) hue-rotate(18deg) brightness(100%) contrast(100%)'
 		},
 		{
-			name: 'brown',
+			name: 'braun',
 			filter: 'invert(30%) sepia(164%) saturate(219%) hue-rotate(689deg) brightness(208%) contrast(140%)'
 		}
 	],
