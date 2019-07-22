@@ -43,7 +43,7 @@ clothes-configurator {
   width:2rem;
   height: 2rem;
   border-radius: 50%;
-  background: #d10000;
+  background: #d65a5a;
   position: relative;
 }
 
@@ -60,7 +60,7 @@ clothes-configurator {
 }
 
 .ColorMenu-itemWrapper:first-child .ColorMenu-buttonFilter {
-  background: #d10000;
+  background: #d65a5a;
   mix-blend-mode: unset;
 }
 
