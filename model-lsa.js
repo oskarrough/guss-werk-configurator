@@ -9,7 +9,7 @@ export default {
 		},
 		{
 			name: 'grün',
-			filter: 'invert(52%) sepia(4%) saturate(100%) hue-rotate(18deg) brightness(100%) contrast(100%)'
+			filter: 'invert(33%) sepia(3%) saturate(100%) hue-rotate(60deg) brightness(250%) contrast(100%)'
 		},
 		{
 			name: 'braun',
