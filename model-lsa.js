@@ -25,7 +25,7 @@ export default {
 		},
 		{
 			name: 'senfgelb',
-			filter: 'invert(25%) sepia(100%) saturate(1000%) hue-rotate(24deg) brightness(100%) contrast(100%)'
+			filter: 'invert(50%) sepia(100%) saturate(1000%) hue-rotate(400deg) brightness(150%) contrast(100%)'
 		},
 		{
 			name: 'braun',
