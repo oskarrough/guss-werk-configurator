@@ -44,7 +44,7 @@ export default {
 		[
 			{
 				id: 'brust',
-				title: 'Brust',
+				title: 'Brusttasche',
 				url: 'brust-',
 				format: '.png',
 				options: ['', 'groß mitte', 'klein links', 'klein rechts']
