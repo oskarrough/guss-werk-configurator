@@ -47,7 +47,7 @@ export default {
 				title: 'Brust',
 				url: 'brust-',
 				format: '.png',
-				options: ['', 'gross mitte', 'klein links', 'klein rechts']
+				options: ['', 'groß mitte', 'klein links', 'klein rechts']
 			}
 		],
 
@@ -74,14 +74,14 @@ export default {
 				title: 'Hüftetasche links',
 				url: 'huefte-links-',
 				format: '.png',
-				options: ['', 'klein', 'gross']
+				options: ['', 'klein', 'groß']
 			},
 			{
 				id: 'huefteRechts',
 				title: 'Hüftetasche rechts',
 				url: 'huefte-rechts-',
 				format: '.png',
-				options: ['', 'klein', 'gross']
+				options: ['', 'klein', 'groß']
 			}
 		],
 
