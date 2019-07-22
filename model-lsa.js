@@ -13,7 +13,7 @@ export default {
 		},
 		{
 			name: 'braun',
-			filter: 'invert(30%) sepia(164%) saturate(219%) hue-rotate(689deg) brightness(208%) contrast(140%)'
+			filter: 'invert(33%) sepia(50%) saturate(1000%) hue-rotate(24deg) brightness(100%) contrast(100%)'
 		}
 	],
 
