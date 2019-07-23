@@ -55,6 +55,7 @@ export default {
 				options: [
 					'GL02 braun',
 					'GL02 cognac',
+					'GL02 cognac24',
 					'GL02 schwarz',
 					'GK01 braun',
 					'GK01 cognac',
