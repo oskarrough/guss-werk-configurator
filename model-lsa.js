@@ -49,7 +49,7 @@ export default {
 		},
 		{
 			name: 'petrol',
-			filter: 'invert(36%) sepia(100%) saturate(67%) hue-rotate(133deg) brightness(100%) contrast(200%)'
+			filter: 'invert(25%) sepia(100%) saturate(67%) hue-rotate(148deg) brightness(189%) contrast(160%)'
 		},
 		{
 			name: 'anthrazit',
