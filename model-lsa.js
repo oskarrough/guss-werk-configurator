@@ -26,6 +26,26 @@ export default {
 		{
 			name: 'senfgelb',
 			filter: 'invert(61%) sepia(100%) saturate(200%) hue-rotate(354deg) brightness(100%) contrast(200%)'
+		},
+		{
+			name: 'grün',
+			filter: 'invert(36%) sepia(100%) saturate(67%) hue-rotate(90deg) brightness(100%) contrast(200%)'
+		},
+		{
+			name: 'braun',
+			filter: 'invert(33%) sepia(100%) saturate(63%) hue-rotate(-10deg) brightness(100%) contrast(200%)'
+		},
+		{
+			name: 'hellblau',
+			filter: 'invert(69%) sepia(100%) saturate(1000%) hue-rotate(188deg) brightness(100%) contrast(200%)'
+		},
+		{
+			name: 'rot',
+			filter: 'invert(56%) sepia(100%) saturate(1000%) hue-rotate(312deg) brightness(100%) contrast(600%)'
+		},
+		{
+			name: 'senfgelb',
+			filter: 'invert(61%) sepia(100%) saturate(200%) hue-rotate(354deg) brightness(100%) contrast(200%)'
 		}
 	],
 
