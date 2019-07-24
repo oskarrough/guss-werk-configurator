@@ -54,6 +54,7 @@ export default {
 		{
 			name: 'senfgelb',
 			filter: 'invert(61%) sepia(100%) saturate(200%) hue-rotate(354deg) brightness(100%) contrast(200%)'
+		}
 	],
 
 	features: [
