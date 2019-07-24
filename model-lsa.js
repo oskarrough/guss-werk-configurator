@@ -57,7 +57,7 @@ export default {
 		},
 		{
 			name: 'grafit',
-			filter: 'invert(55%) sepia(10%) saturate(62%) hue-rotate(181deg) brightness(100%) contrast(150%)'
+			filter: 'invert(55%) sepia(10%) saturate(62%) hue-rotate(181deg) brightness(125%) contrast(150%)'
 		}
 	],
 
