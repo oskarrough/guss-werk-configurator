@@ -4,11 +4,11 @@ export default {
 
 	colors: [
 		{
-			name: 'grau',
+			name: 'hellgrau',
 			filter: 'none'
 		},
 		{
-			name: 'dunkelgrün',
+			name: 'mittelgrau',
 			filter: 'invert(36%) sepia(100%) saturate(67%) hue-rotate(90deg) brightness(100%) contrast(200%)'
 		},
 		{
@@ -16,19 +16,19 @@ export default {
 			filter: 'invert(40%) sepia(10%) saturate(63%) hue-rotate(9deg) brightness(100%) contrast(211%)'
 		},
 		{
-			name: 'hellblau',
+			name: 'anthrazit',
 			filter: 'invert(69%) sepia(100%) saturate(1000%) hue-rotate(188deg) brightness(100%) contrast(200%)'
 		},
 		{
-			name: 'rot',
+			name: 'bordeaux',
 			filter: 'invert(56%) sepia(100%) saturate(1000%) hue-rotate(312deg) brightness(100%) contrast(600%)'
 		},
 		{
-			name: 'senfgelb',
+			name: 'okker',
 			filter: 'invert(61%) sepia(100%) saturate(200%) hue-rotate(354deg) brightness(100%) contrast(200%)'
 		},
 		{
-			name: 'grün',
+			name: 'olivgrün',
 			filter: 'invert(57%) sepia(100%) saturate(163%) hue-rotate(59deg) brightness(100%) contrast(200%)'
 		},
 		{
@@ -36,23 +36,23 @@ export default {
 			filter: 'invert(33%) sepia(100%) saturate(63%) hue-rotate(-10deg) brightness(100%) contrast(200%)'
 		},
 		{
-			name: 'hellblau',
+			name: 'dunkelgrün',
 			filter: 'invert(69%) sepia(100%) saturate(1000%) hue-rotate(188deg) brightness(100%) contrast(200%)'
 		},
 		{
-			name: 'rot',
+			name: 'sand',
 			filter: 'invert(56%) sepia(100%) saturate(1000%) hue-rotate(312deg) brightness(100%) contrast(600%)'
 		},
 		{
-			name: 'senfgelb',
+			name: 'petrol',
 			filter: 'invert(61%) sepia(100%) saturate(200%) hue-rotate(354deg) brightness(100%) contrast(200%)'
 		},
 		{
-			name: 'rot',
+			name: 'denim',
 			filter: 'invert(56%) sepia(100%) saturate(1000%) hue-rotate(312deg) brightness(100%) contrast(600%)'
 		},
 		{
-			name: 'senfgelb',
+			name: 'dunkelblau',
 			filter: 'invert(61%) sepia(100%) saturate(200%) hue-rotate(354deg) brightness(100%) contrast(200%)'
 		}
 	],
