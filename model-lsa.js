@@ -29,11 +29,11 @@ export default {
 		},
 		{
 			name: 'olivgrün',
-			filter: 'invert(57%) sepia(100%) saturate(163%) hue-rotate(59deg) brightness(100%) contrast(200%)'
+			filter: 'invert(31%) sepia(100%) saturate(69%) hue-rotate(36deg) brightness(100%) contrast(118%)'
 		},
 		{
 			name: 'braun',
-			filter: 'invert(33%) sepia(100%) saturate(63%) hue-rotate(-10deg) brightness(100%) contrast(200%)'
+			filter: 'invert(33%) sepia(100%) saturate(63%) hue-rotate(327deg) brightness(89%) contrast(150%)'
 		},
 		{
 			name: 'denim',
