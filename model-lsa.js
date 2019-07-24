@@ -16,7 +16,7 @@ export default {
 			filter: 'invert(40%) sepia(10%) saturate(63%) hue-rotate(9deg) brightness(100%) contrast(211%)'
 		},
 		{
-			name: 'anthrazit',
+			name: 'dunkelstblau',
 			filter: 'invert(69%) sepia(100%) saturate(1000%) hue-rotate(188deg) brightness(100%) contrast(200%)'
 		},
 		{
@@ -36,7 +36,7 @@ export default {
 			filter: 'invert(33%) sepia(100%) saturate(63%) hue-rotate(-10deg) brightness(100%) contrast(200%)'
 		},
 		{
-			name: 'dunkelgrün',
+			name: 'denim',
 			filter: 'invert(69%) sepia(100%) saturate(1000%) hue-rotate(188deg) brightness(100%) contrast(200%)'
 		},
 		{
@@ -48,11 +48,11 @@ export default {
 			filter: 'invert(61%) sepia(100%) saturate(200%) hue-rotate(354deg) brightness(100%) contrast(200%)'
 		},
 		{
-			name: 'denim',
+			name: 'anthrazit',
 			filter: 'invert(56%) sepia(100%) saturate(1000%) hue-rotate(312deg) brightness(100%) contrast(600%)'
 		},
 		{
-			name: 'dunkelblau',
+			name: 'dunkelgrün',
 			filter: 'invert(61%) sepia(100%) saturate(200%) hue-rotate(354deg) brightness(100%) contrast(200%)'
 		}
 	],
