@@ -8,11 +8,11 @@ export default {
 			filter: 'none'
 		},
 		{
-			name: 'blau', 'Twill 60%CO/40%PES, 240g/m'
+			name: 'BLAU,Twill 60%CO/40%PES, 240g/m',
 			filter: 'invert(50%) sepia(100%) saturate(211%) hue-rotate(167deg) brightness(69%) contrast(196%)'
 		},
 		{
-			name: 'schwarz','Canvas oder Twill 60%CO/40%PES, 320g/m'
+			name: 'SCHWARZ,Canvas oder Twill 60%CO/40%PES, 320g/m',
 			filter: 'invert(40%) sepia(10%) saturate(63%) hue-rotate(9deg) brightness(100%) contrast(211%)'
 		},
 		{
