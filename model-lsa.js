@@ -29,7 +29,7 @@ export default {
 		},
 		{
 			name: 'olivgrün',
-			filter: 'invert(31%) sepia(100%) saturate(69%) hue-rotate(36deg) brightness(100%) contrast(118%)'
+			filter: 'invert(32%) sepia(1000%) saturate(133%) hue-rotate(32deg) brightness(80%) contrast(80%)'
 		},
 		{
 			name: 'braun',
