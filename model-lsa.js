@@ -53,7 +53,7 @@ export default {
 		},
 		{
 			name: 'anthrazit',
-			filter: 'invert(40%) sepia(10%) saturate(62%) hue-rotate(181deg) brightness(100%) contrast(150%)'
+			filter: 'invert(40%) sepia(10%) saturate(62%) hue-rotate(181deg) brightness(105%) contrast(150%)'
 		},
 		{
 			name: 'grafit',
