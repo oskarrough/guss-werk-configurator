@@ -53,7 +53,7 @@ export default {
 		},
 		{
 			name: 'mittelgrau',
-			filter: 'invert(61%) sepia(100%) saturate(200%) hue-rotate(354deg) brightness(100%) contrast(200%)'
+			filter: 'invert(100%) sepia(100%) saturate(1000%) hue-rotate(312deg) brightness(100%) contrast(70%)'
 		}
 	],
 
