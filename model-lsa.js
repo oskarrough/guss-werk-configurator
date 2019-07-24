@@ -8,7 +8,7 @@ export default {
 			filter: 'none'
 		},
 		{
-			name: 'grün',
+			name: 'dunkelgrün',
 			filter: 'invert(36%) sepia(100%) saturate(67%) hue-rotate(90deg) brightness(100%) contrast(200%)'
 		},
 		{
