@@ -37,7 +37,7 @@ export default {
 		},
 		{
 			name: 'denim',
-			filter: 'invert(69%) sepia(100%) saturate(1000%) hue-rotate(188deg) brightness(100%) contrast(200%)'
+			filter: 'invert(60%) sepia(50%) saturate(400%) hue-rotate(178deg) brightness(35%) contrast(92%)'
 		},
 		{
 			name: 'sand',
