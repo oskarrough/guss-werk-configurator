@@ -12,8 +12,8 @@ export default {
 			filter: 'invert(36%) sepia(100%) saturate(67%) hue-rotate(90deg) brightness(100%) contrast(200%)'
 		},
 		{
-			name: 'braun',
-			filter: 'invert(33%) sepia(100%) saturate(63%) hue-rotate(-10deg) brightness(100%) contrast(200%)'
+			name: 'schwarz',
+			filter: 'invert(40%) sepia(10%) saturate(63%) hue-rotate(9deg) brightness(100%) contrast(211%)'
 		},
 		{
 			name: 'hellblau',
