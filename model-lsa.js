@@ -21,7 +21,7 @@ export default {
 		},
 		{
 			name: 'taubenblau',
-			filter: 'invert(17%) sepia(74%) saturate(1000%) hue-rotate(202deg) brightness(32%) contrast(63%)'
+			filter: 'invert(95%) sepia(100%) saturate(700%) hue-rotate(174deg) brightness(100%) contrast(101%)'
 		},
 		{
 			name: 'bordeaux',
