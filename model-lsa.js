@@ -52,8 +52,8 @@ export default {
 			filter: 'invert(40%) sepia(10%) saturate(62%) hue-rotate(181deg) brightness(100%) contrast(150%)'
 		},
 		{
-			name: 'mittelgrau',
-			filter: 'invert(40%) sepia(10%) saturate(63%) hue-rotate(9deg) brightness(100%) contrast(211%)'
+			name: 'grafit',
+			filter: 'invert(55%) sepia(10%) saturate(62%) hue-rotate(181deg) brightness(100%) contrast(150%)'
 		}
 	],
 
