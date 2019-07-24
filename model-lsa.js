@@ -41,7 +41,7 @@ export default {
 		},
 		{
 			name: 'sand',
-			filter: 'invert(56%) sepia(100%) saturate(1000%) hue-rotate(312deg) brightness(100%) contrast(600%)'
+			filter: 'invert(100%) sepia(100%) saturate(700%) hue-rotate(319deg) brightness(100%) contrast(80%)'
 		},
 		{
 			name: 'petrol',
