@@ -37,7 +37,7 @@ export default {
 		},
 		{
 			name: 'braun',
-			filter: 'invert(33%) sepia(100%) saturate(63%) hue-rotate(327deg) brightness(89%) contrast(150%)'
+			filter: 'invert(33%) sepia(100%) saturate(63%) hue-rotate(327deg) brightness(89%) contrast(125%)'
 		},
 		{
 			name: 'denim',
