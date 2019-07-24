@@ -21,7 +21,7 @@ export default {
 		},
 		{
 			name: 'bordeaux',
-			filter: 'invert(56%) sepia(100%) saturate(1000%) hue-rotate(312deg) brightness(100%) contrast(600%)'
+			filter: 'invert(56%) sepia(100%) saturate(991%) hue-rotate(312deg) brightness(51%) contrast(100%)'
 		},
 		{
 			name: 'okker',
