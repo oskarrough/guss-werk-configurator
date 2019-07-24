@@ -25,7 +25,7 @@ export default {
 		},
 		{
 			name: 'okker',
-			filter: 'invert(61%) sepia(100%) saturate(200%) hue-rotate(354deg) brightness(100%) contrast(200%)'
+			filter: 'invert(57%) sepia(100%) saturate(200%) hue-rotate(332deg) brightness(100%) contrast(200%)'
 		},
 		{
 			name: 'olivgrün',
