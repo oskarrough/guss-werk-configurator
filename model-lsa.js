@@ -17,7 +17,7 @@ export default {
 		},
 		{
 			name: 'dunkelstblau',
-			filter: 'invert(69%) sepia(100%) saturate(1000%) hue-rotate(188deg) brightness(100%) contrast(200%)'
+			filter: 'invert(20%) sepia(100%) saturate(200%) hue-rotate(188deg) brightness(84%) contrast(200%)'
 		},
 		{
 			name: 'bordeaux',
