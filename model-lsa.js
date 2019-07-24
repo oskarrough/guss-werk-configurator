@@ -49,7 +49,7 @@ export default {
 		},
 		{
 			name: 'anthrazit',
-			filter: 'invert(40%) sepia(10%) saturate(63%) hue-rotate(9deg) brightness(100%) contrast(211%)'
+			filter: 'invert(40%) sepia(10%) saturate(62%) hue-rotate(181deg) brightness(100%) contrast(150%)'
 		},
 		{
 			name: 'mittelgrau',
