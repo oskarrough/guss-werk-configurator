@@ -58,7 +58,7 @@ export default {
 		{
 			name: 'grafit, Twill 60%CO/40%PES, 240g/m'
 			filter: 'invert(55%) sepia(10%) saturate(62%) hue-rotate(181deg) brightness(125%) contrast(150%)'
-		}
+		},
 		{
 			name: 'Farbtest, alternative Maske'
 			filter: 'invert(55%) sepia(10%) saturate(62%) hue-rotate(181deg) brightness(125%) contrast(150%)'
