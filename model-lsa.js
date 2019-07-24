@@ -8,7 +8,7 @@ export default {
 			filter: 'none'
 		},
 		{
-			name: 'mittelgrau',
+			name: 'dunkelgrün',
 			filter: 'invert(36%) sepia(100%) saturate(67%) hue-rotate(90deg) brightness(100%) contrast(200%)'
 		},
 		{
@@ -52,7 +52,7 @@ export default {
 			filter: 'invert(56%) sepia(100%) saturate(1000%) hue-rotate(312deg) brightness(100%) contrast(600%)'
 		},
 		{
-			name: 'dunkelgrün',
+			name: 'mittelgrau',
 			filter: 'invert(61%) sepia(100%) saturate(200%) hue-rotate(354deg) brightness(100%) contrast(200%)'
 		}
 	],
