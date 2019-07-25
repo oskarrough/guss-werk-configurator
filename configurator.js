@@ -137,7 +137,7 @@ export class Configurator extends HTMLElement {
             </div>
           </form>
           <div class="Product">
-            <img src="./assets/lsa-basis/alt-maske-lang.png" class="ProductItem Mask" style=${`filter: ${this.model.colors[0].filter}`} alt=${this.model.colors[0].name}>
+            <img src="./assets/lsa-basis/maske-lang.png" class="ProductItem Mask" style=${`filter: ${this.model.colors[0].filter}`} alt=${this.model.colors[0].name}>
             ${this.model.features.map(featureArr => getProductItem( this, this.model.imageFolder, featureArr ))}
           </div>
         </div>
