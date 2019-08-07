@@ -99,8 +99,6 @@ clothes-configurator {
 	background: white;
 	overflow: auto;
 	transition: all 0.2s ease-in-out;
-	margin-left: 1rem;
-	margin-right: 1rem;
 }
 
 .MenuWrapper.Flex {
@@ -124,7 +122,6 @@ clothes-configurator {
 	margin: 0;
 	margin-bottom: 0.3rem;
 	text-align: center;
-	font-size: 0.9rem;
 }
 
 .Menu-list {
@@ -136,7 +133,6 @@ clothes-configurator {
 	justify-content: center;
 	padding-left: 0.4rem;
 	margin-bottom: 0.5rem;
-	font-size: 0.9rem;
 }
 
 .BtnBox {
@@ -149,6 +145,10 @@ clothes-configurator {
 }
 
 .BtnBox-button {
+	background: black;
+	color: white;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
 	border: none;
 	border-radius: 3px;
 	font-size: 1rem;

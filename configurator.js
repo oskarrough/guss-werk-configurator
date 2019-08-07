@@ -22,7 +22,7 @@ function getMenu(configurator, featureArr, renderFct) {
 				// get selected value for selected option
 				let selectValue = findSelectedValueFor(configurator, feature)
 				return hyper(feature)`
-					<div class="${`Menu ${feature.id}`}">
+					<div class="${`Menu Container ${feature.id}`}">
 						<label class="Menu-title" for="Menu-list">
 							${feature.title}
 						</label>
@@ -100,13 +100,20 @@ export class Configurator extends HTMLElement {
 		this.model = featuresObject
 	}
 
+	handleSubmit(event) {
+		event.preventDefault()
+		console.log(event)
+		// @todo
+		// get current configuration in some form that we can store/send
+	}
+
 	render() {
 		/*const colorsObjects = this.model.colors.filter(color => {
 		return color.name !== 'default';
 		})*/
 		this.html`
 			<div class="Config">
-				<form class="Menus">
+				<form class="Menus" onsubmit=${this.handleSubmit}>
 					<h1 class="Title">${this.model.name}</h1>
 
 					${this.model.features.map(featureArr => getMenu(this, featureArr, this.render))}
@@ -130,7 +137,7 @@ export class Configurator extends HTMLElement {
 					<p class="Container">Mindestbestellmenge 10 Stk/Konfiguration</p>
 
 					<div class="Container BtnBox">
-						<button class="BtnBox-button" type="submit">Submit ${this.product}</button>
+						<button class="BtnBox-button" type="submit">Anfragen</button>
 					</div>
 				</form>
 
