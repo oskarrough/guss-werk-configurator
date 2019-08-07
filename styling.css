@@ -26,30 +26,30 @@ clothes-configurator {
 
 /* Color menu */
 
-.ColorMenu {
+.ColorMenu {}
+
+.ColorMenu-button {
+	width: 100%;
 	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	text-align: center;
-	/* overflow: auto; */
-	font-size: 0.8rem;
+	flex-flow: row nowrap;
+	padding: 0;
+	margin-bottom: 0.5rem;
+	border: 0;
+	background: none;
+	text-align: left;
 }
 
-.ColorMenu-itemWrapper {
-	padding-right: 1rem;
-	padding-bottom: 0.5rem;
-	flex: 1;
-}
-
-.ColorMenu-itemWrapper-button {
+.ColorMenu-badge {
+	flex-shrink: 0;
 	width: 2rem;
 	height: 2rem;
 	border-radius: 50%;
 	background: #8f8f9c;
 	position: relative;
+	border: 0;
 }
 
-.ColorMenu-buttonFilter {
+.ColorMenu-filter {
 	mix-blend-mode: multiply;
 	position: absolute;
 	top: 0;
@@ -61,14 +61,14 @@ clothes-configurator {
 	border-radius: 50%;
 }
 
-.ColorMenu-itemWrapper:first-child .ColorMenu-buttonFilter {
+.ColorMenu-button:first-child .ColorMenu-filter {
 	background: #8f8f9c;
 	mix-blend-mode: unset;
 }
 
-.ColorMenu-itemWrapper-text {
-	margin: 0;
-	margin-top: 0.2rem;
+.ColorMenu-text {
+	margin: auto 0 auto 1rem;
+	font-size: 0.8rem;
 }
 
 /* Menus */
@@ -98,7 +98,6 @@ clothes-configurator {
 	padding: 0.3rem 1rem;
 	background: white;
 	overflow: auto;
-	opacity: 0.8;
 	transition: all 0.2s ease-in-out;
 	margin-left: 1rem;
 	margin-right: 1rem;
@@ -119,11 +118,6 @@ clothes-configurator {
 
 .MenuWrapper.Flex .Menu:last-child {
 	margin-left: 0.5rem;
-}
-
-.Menu:hover {
-	/*box-shadow: 0 3px 9px 5px rgba(0,0,0,.04);*/
-	opacity: 1;
 }
 
 .Menu-title {
@@ -160,23 +154,16 @@ clothes-configurator {
 	font-size: 1rem;
 	transition: all 0.2s ease-in-out;
 	padding: 0.6rem;
-	width: 92%;
-	opacity: 0.8;
+	width: 100%;
+}
+
+.Container {
+	margin-left: 1rem;
+	margin-right: 1rem;
 }
 
 .BtnBox-button:hover {
 	box-shadow: 0 3px 9px 5px rgba(0, 0, 0, 0.04);
-	opacity: 1;
-}
-
-/* common styling */
-
-.Menus,
-.Menu,
-.Product,
-.Menu-list,
-.BtnBox-buton {
-	/*box-shadow: 0 1px 0 1px rgba(0,0,0,.04);*/
 }
 
 /* Mask */

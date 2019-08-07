@@ -136,7 +136,7 @@ export default {
 		[
 			{
 				id: 'front',
-				title: 'Front',
+				title: 'Länge',
 				url: 'lsa-',
 				format: '.jpg',
 				options: ['lang', 'kurz']

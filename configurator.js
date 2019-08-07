@@ -58,13 +58,12 @@ function getProductItem(configurator, baseURL, featureArr) {
 function getColorElement(configurator, colorObject) {
 	function changeColorMask(configurator, event) {
 		event.preventDefault()
-		const filter = event.target.dataset.filter
+		const filter = event.currentTarget.dataset.filter
 		const mask = configurator.shadowRoot.querySelector('.Mask')
-		const defaultBtn = configurator.shadowRoot.querySelector(
-			'.ColorMenu-itemWrapper-button'
-		) // first btn in the list
+		// first btn in the list
+		const defaultBtn = configurator.shadowRoot.querySelector('.ColorMenu-button') 
 
-		if (event.target === defaultBtn) {
+		if (event.currentTarget === defaultBtn) {
 			mask.classList.remove('is-active')
 			return false
 		}
@@ -73,15 +72,16 @@ function getColorElement(configurator, colorObject) {
 		mask.style.filter = filter
 	}
 	return hyper(colorObject)`
-		<div class="ColorMenu-itemWrapper">
-			<button class="ColorMenu-itemWrapper-button"
-				data-filter=${colorObject.filter}
-				onclick=${event => changeColorMask(configurator, event)}
-			>
-				<span class="ColorMenu-buttonFilter" style="${'filter: ' + colorObject.filter}"></span>
-			</button>
-			<p class="ColorMenu-itemWrapper-text">${colorObject.name}</p>
-		</div>
+		<button
+			class="ColorMenu-button"
+			data-filter=${colorObject.filter}
+			onclick=${event => changeColorMask(configurator, event)}
+		>
+			<div class="ColorMenu-badge">
+				<span class="ColorMenu-filter" style="${'filter: ' + colorObject.filter}"></span>
+			</div>
+			<p class="ColorMenu-text">${colorObject.name}</p>
+		</button>
 	`
 }
 
@@ -111,7 +111,7 @@ export class Configurator extends HTMLElement {
 
 					${this.model.features.map(featureArr => getMenu(this, featureArr, this.render))}
 
-					<div class="ColorMenu">
+					<div class="ColorMenu Container">
 						${this.model.colors.map(color => getColorElement(this, color))}
 					</div>
 
@@ -127,7 +127,9 @@ export class Configurator extends HTMLElement {
 						</label>
 					</div>
 
-					<div class="BtnBox">
+					<p class="Container">Mindestbestellmenge 10 Stk/Konfiguration</p>
+
+					<div class="Container BtnBox">
 						<button class="BtnBox-button" type="submit">Submit ${this.product}</button>
 					</div>
 				</form>
