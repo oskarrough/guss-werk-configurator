@@ -28,13 +28,17 @@ clothes-configurator {
 
 .ColorMenu {
 	display: flex;
-	justify-content: center;
 	flex-wrap: wrap;
+	justify-content: center;
 	text-align: center;
+	/* overflow: auto; */
 	font-size: 0.8rem;
 }
+
 .ColorMenu-itemWrapper {
-	margin: 0.5rem;
+	padding-right: 1rem;
+	padding-bottom: 0.5rem;
+	flex: 1;
 }
 
 .ColorMenu-itemWrapper-button {
@@ -77,10 +81,10 @@ clothes-configurator {
 }
 
 .Menus {
-	background-color: #ebeef3;
-	font-size: 1.2rem;
+	max-width: 40rem;
 	max-height: 100vh;
 	overflow: auto;
+	background-color: #ebeef3;
 }
 
 .MenuWrapper {
