@@ -68,7 +68,7 @@ export default {
 	features: [
 		[
 			{
-				id: 'accessoires',
+				id: 'gurte',
 				title: 'Gurte',
 				url: 'gurt-',
 				format: '.png',
@@ -91,7 +91,7 @@ export default {
 
 		[
 			{
-				id: 'brust',
+				id: 'brusttasche',
 				title: 'Brusttasche',
 				url: 'brust-',
 				format: '.png',
@@ -101,14 +101,14 @@ export default {
 
 		[
 			{
-				id: 'TouchonLinks',
+				id: 'touchon_links',
 				title: 'Touchonhalter links',
 				url: 'touchon-links-',
 				format: '.png',
 				options: ['', 'Touchon']
 			},
 			{
-				id: 'TouchonRechts',
+				id: 'touchon_rechts',
 				title: 'Touchonhalter rechts',
 				url: 'touchon-rechts-',
 				format: '.png',
@@ -118,14 +118,14 @@ export default {
 
 		[
 			{
-				id: 'huefteLinks',
+				id: 'huefte_links',
 				title: 'Hüftetasche links',
 				url: 'huefte-links-',
 				format: '.png',
 				options: ['', 'klein', 'groß']
 			},
 			{
-				id: 'huefteRechts',
+				id: 'huefte_rechts',
 				title: 'Hüftetasche rechts',
 				url: 'huefte-rechts-',
 				format: '.png',
@@ -135,7 +135,7 @@ export default {
 
 		[
 			{
-				id: 'front',
+				id: 'laenge',
 				title: 'Länge',
 				url: 'lsa-',
 				format: '.jpg',

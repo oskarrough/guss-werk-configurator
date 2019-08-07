@@ -26,7 +26,7 @@ function getMenu(configurator, featureArr, renderFct) {
 						<label class="Menu-title" for="Menu-list">
 							${feature.title}
 						</label>
-						<select class="Menu-list" onchange=${renderFct} >
+						<select class="Menu-list" name=${feature.id} onchange=${renderFct} >
 							${feature.options.map(option => {
 								return hyper()`
 									<option
@@ -62,12 +62,13 @@ function getColorElement(configurator, colorObject) {
 		const mask = configurator.shadowRoot.querySelector('.Mask')
 		// first btn in the list
 		const defaultBtn = configurator.shadowRoot.querySelector('.ColorMenu-button') 
-
+		
+		// Update the mask with selected color.
+		mask.alt = colorObject.name
 		if (event.currentTarget === defaultBtn) {
 			mask.classList.remove('is-active')
 			return false
 		}
-
 		mask.classList.add('is-active')
 		mask.style.filter = filter
 	}
@@ -85,6 +86,20 @@ function getColorElement(configurator, colorObject) {
 	`
 }
 
+function serializeForm(form) {
+	const formData = new FormData(form)
+	let config = {}
+	for (var pair of formData) {
+		let name = pair[0];
+		let value = pair[1];
+		// console.log({name, value})
+		if (value !== '') {
+			config[name] = value
+		}
+	}
+	return config
+}
+
 export class Configurator extends HTMLElement {
 	constructor() {
 		super()
@@ -92,6 +107,7 @@ export class Configurator extends HTMLElement {
 		this.html = hyper(this.shadow)
 
 		this.render = this.render.bind(this)
+		this.handleSubmit = this.handleSubmit.bind(this)
 		this.render()
 		this.loadStyle()
 	}
@@ -102,9 +118,15 @@ export class Configurator extends HTMLElement {
 
 	handleSubmit(event) {
 		event.preventDefault()
-		console.log(event)
-		// @todo
-		// get current configuration in some form that we can store/send
+
+		// get current configuration 
+		const config = serializeForm(event.target)
+		// and color
+		const color = this.shadowRoot.querySelector('.Mask').alt
+		config.name = this.model.name
+		config.color = color
+		console.log({config})
+		alert(JSON.stringify(config))
 	}
 
 	render() {
@@ -116,7 +138,9 @@ export class Configurator extends HTMLElement {
 				<form class="Menus" onsubmit=${this.handleSubmit}>
 					<h1 class="Title">${this.model.name}</h1>
 
+					<div class="Features">
 					${this.model.features.map(featureArr => getMenu(this, featureArr, this.render))}
+					</div>
 
 					<div class="ColorMenu Container">
 						${this.model.colors.map(color => getColorElement(this, color))}
