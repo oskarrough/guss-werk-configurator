@@ -1,9 +1,5 @@
 {
   "name": "clothes-configurator",
-  "jest": {
-    "verbose": true,
-    "preset": "jest-puppeteer"
-  },
   "version": "1.0.0",
   "description": "A custom element to create personalized clothes",
   "scripts": {
@@ -13,12 +9,7 @@
     "type": "git",
     "url": "git+https://github.com/GregVes/clothes-configurator.git"
   },
-  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/GregVes/clothes-configurator/issues"
-  },
-  "homepage": "https://github.com/GregVes/clothes-configurator#readme",
   "devDependencies": {},
   "dependencies": {}
 }
