@@ -24,28 +24,35 @@ clothes-configurator {
 	justify-content: center;
 }
 
+.Container {
+	margin-left: 1rem;
+	margin-right: 1rem;
+}
+
 /* Color menu */
 
-.ColorMenu {
+.ColorButton {
+	width: 100%;
 	display: flex;
-	justify-content: center;
-	flex-wrap: wrap;
-	text-align: center;
-	font-size: 0.8rem;
-}
-.ColorMenu-itemWrapper {
-	margin: 0.5rem;
+	flex-flow: row nowrap;
+	padding: 0;
+	margin-bottom: 0.5rem;
+	border: 0;
+	background: none;
+	text-align: left;
 }
 
-.ColorMenu-itemWrapper-button {
-	width: 2rem;
-	height: 2rem;
+.ColorButton-circle {
+	flex-shrink: 0;
+	width: 1.8rem;
+	height: 1.8rem;
 	border-radius: 50%;
 	background: #8f8f9c;
 	position: relative;
+	border: 0;
 }
 
-.ColorMenu-buttonFilter {
+.ColorButton-filter {
 	mix-blend-mode: multiply;
 	position: absolute;
 	top: 0;
@@ -57,79 +64,53 @@ clothes-configurator {
 	border-radius: 50%;
 }
 
-.ColorMenu-itemWrapper:first-child .ColorMenu-buttonFilter {
-	background: #8f8f9c;
-	mix-blend-mode: unset;
-}
-
-.ColorMenu-itemWrapper-text {
-	margin: 0;
-	margin-top: 0.2rem;
+.ColorButton-text {
+	margin: auto 0 auto 0.5em;
+	font-size: small;
 }
 
 /* Menus */
 
 .Title {
-	margin: 1rem;
+	margin: 1rem 0;
 	font-size: 1.7rem;
-	padding: 0.2rem;
-	text-align: center;
 }
 
 .Menus {
-	background-color: #ebeef3;
-	font-size: 1.2rem;
+	max-width: 40rem;
 	max-height: 100vh;
 	overflow: auto;
+	padding: 0 1rem;
 }
 
 .MenuWrapper {
 	margin-bottom: 1rem;
 }
 
-.Menu {
-	display: flex;
-	flex-direction: column;
-	border-radius: 3px;
-	padding: 0.3rem 1rem;
-	background: white;
-	overflow: auto;
-	opacity: 0.8;
-	transition: all 0.2s ease-in-out;
-	margin-left: 1rem;
-	margin-right: 1rem;
-}
-
-.MenuWrapper.Flex {
+.MenuWrapper--multiple {
 	display: flex;
 	justify-content: space-between;
 }
 
-.MenuWrapper.Flex > .Menu {
+.MenuWrapper--multiple > .Menu {
 	flex-basis: 50%;
 }
 
-.MenuWrapper.Flex .Menu:first-child {
+.MenuWrapper--multiple .Menu:first-child {
 	margin-right: 0.5rem;
 }
 
-.MenuWrapper.Flex .Menu:last-child {
+.MenuWrapper--multiple .Menu:last-child {
 	margin-left: 0.5rem;
 }
 
-.Menu:hover {
-	/*box-shadow: 0 3px 9px 5px rgba(0,0,0,.04);*/
-	opacity: 1;
+.Menu {
+	display: flex;
+	flex-direction: column;
+	transition: all 0.2s ease-in-out;
 }
 
-.Menu-title {
-	margin: 0;
-	margin-bottom: 0.3rem;
-	text-align: center;
-	font-size: 0.9rem;
-}
-
-.Menu-list {
+.Menu select {
 	border: 0 !important;
 	background: #e5eaee;
 	border-radius: 0.3rem;
@@ -137,42 +118,25 @@ clothes-configurator {
 	display: flex;
 	justify-content: center;
 	padding-left: 0.4rem;
-	margin-bottom: 0.5rem;
-	font-size: 0.9rem;
+	margin-top: 0.3rem;
+	/* margin-bottom: 0.5rem; */
 }
 
-.BtnBox {
-	display: flex;
-	justify-content: center;
-}
-
-.BtnBox {
-	margin-bottom: 1rem;
-}
-
-.BtnBox-button {
+.Button {
+	background: black;
+	color: white;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
 	border: none;
 	border-radius: 3px;
 	font-size: 1rem;
 	transition: all 0.2s ease-in-out;
 	padding: 0.6rem;
-	width: 92%;
-	opacity: 0.8;
+	width: 100%;
 }
 
-.BtnBox-button:hover {
+.Button:hover {
 	box-shadow: 0 3px 9px 5px rgba(0, 0, 0, 0.04);
-	opacity: 1;
-}
-
-/* common styling */
-
-.Menus,
-.Menu,
-.Product,
-.Menu-list,
-.BtnBox-buton {
-	/*box-shadow: 0 1px 0 1px rgba(0,0,0,.04);*/
 }
 
 /* Mask */

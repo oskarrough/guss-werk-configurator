@@ -14,7 +14,7 @@ function findSelectedValueFor(configurator, feature) {
 
 function getMenu(configurator, featureArr, renderFct) {
 	let multipleFeaturesFlag = ''
-	if (featureArr.length > 1) multipleFeaturesFlag = 'Flex'
+	if (featureArr.length > 1) multipleFeaturesFlag = 'MenuWrapper--multiple'
 
 	return hyper(featureArr)`
 		<div class=${`MenuWrapper ${multipleFeaturesFlag}`}>
@@ -22,22 +22,19 @@ function getMenu(configurator, featureArr, renderFct) {
 				// get selected value for selected option
 				let selectValue = findSelectedValueFor(configurator, feature)
 				return hyper(feature)`
-					<div class="${`Menu ${feature.id}`}">
-						<label class="Menu-title" for="Menu-list">
-							${feature.title}
-						</label>
-						<select class="Menu-list" onchange=${renderFct} >
+					<label class="${`Menu ${feature.id}`}">
+						${feature.title}
+						<select name=${feature.id} onchange=${renderFct} >
 							${feature.options.map(option => {
 								return hyper()`
 									<option
-										class="Menu-list-item"
 										value=${option}
 										selected=${option === selectValue}
 									>${option}</option>
 								`
 							})}
 						</select>
-					</div>
+					</label>
 				`
 			})}
 		</div>
@@ -55,34 +52,51 @@ function getProductItem(configurator, baseURL, featureArr) {
 	})
 }
 
-function getColorElement(configurator, colorObject) {
+function ColorButton(configurator, colorObject) {
 	function changeColorMask(configurator, event) {
 		event.preventDefault()
-		const filter = event.target.dataset.filter
+		const filter = event.currentTarget.dataset.filter
 		const mask = configurator.shadowRoot.querySelector('.Mask')
-		const defaultBtn = configurator.shadowRoot.querySelector(
-			'.ColorMenu-itemWrapper-button'
-		) // first btn in the list
+		// first btn in the list
+		const defaultBtn = configurator.shadowRoot.querySelector('.ColorButton') 
+		
+		// Update the mask with selected color.
+		mask.alt = colorObject.name
+		mask.title = colorObject.name
 
-		if (event.target === defaultBtn) {
+		if (event.currentTarget === defaultBtn) {
 			mask.classList.remove('is-active')
 			return false
 		}
-
 		mask.classList.add('is-active')
 		mask.style.filter = filter
 	}
 	return hyper(colorObject)`
-		<div class="ColorMenu-itemWrapper">
-			<button class="ColorMenu-itemWrapper-button"
-				data-filter=${colorObject.filter}
-				onclick=${event => changeColorMask(configurator, event)}
-			>
-				<span class="ColorMenu-buttonFilter" style="${'filter: ' + colorObject.filter}"></span>
-			</button>
-			<p class="ColorMenu-itemWrapper-text">${colorObject.name}</p>
-		</div>
+		<button
+			class="ColorButton"
+			data-filter=${colorObject.filter}
+			onclick=${event => changeColorMask(configurator, event)}
+		>
+			<span class="ColorButton-circle">
+				<span class="ColorButton-filter" style="${'filter: ' + colorObject.filter}"></span>
+			</span>
+			<span class="ColorButton-text">${colorObject.name}</span>
+		</button>
 	`
+}
+
+function serializeForm(form) {
+	const formData = new FormData(form)
+	let config = {}
+	for (var pair of formData) {
+		let name = pair[0];
+		let value = pair[1];
+		// console.log({name, value})
+		if (value !== '') {
+			config[name] = value
+		}
+	}
+	return config
 }
 
 export class Configurator extends HTMLElement {
@@ -92,6 +106,7 @@ export class Configurator extends HTMLElement {
 		this.html = hyper(this.shadow)
 
 		this.render = this.render.bind(this)
+		this.handleSubmit = this.handleSubmit.bind(this)
 		this.render()
 		this.loadStyle()
 	}
@@ -100,19 +115,31 @@ export class Configurator extends HTMLElement {
 		this.model = featuresObject
 	}
 
+	handleSubmit(event) {
+		event.preventDefault()
+
+		// get current configuration 
+		const config = serializeForm(event.target)
+		// and color
+		const color = this.shadowRoot.querySelector('.Mask').alt
+		config.name = this.model.name
+		config.color = color
+		console.log({config})
+		alert(JSON.stringify(config))
+	}
+
 	render() {
-		/*const colorsObjects = this.model.colors.filter(color => {
-		return color.name !== 'default';
-		})*/
 		this.html`
 			<div class="Config">
-				<form class="Menus">
+				<form class="Menus" onsubmit=${this.handleSubmit}>
 					<h1 class="Title">${this.model.name}</h1>
 
-					${this.model.features.map(featureArr => getMenu(this, featureArr, this.render))}
+					<div class="">
+						${this.model.features.map(featureArr => getMenu(this, featureArr, this.render))}
+					</div>
 
-					<div class="ColorMenu">
-						${this.model.colors.map(color => getColorElement(this, color))}
+					<div class="">
+						${this.model.colors.map(color => ColorButton(this, color))}
 					</div>
 
 					<div style="display: none">
@@ -127,9 +154,11 @@ export class Configurator extends HTMLElement {
 						</label>
 					</div>
 
-					<div class="BtnBox">
-						<button class="BtnBox-button" type="submit">Submit ${this.product}</button>
-					</div>
+					<br>
+					<p>Mindestbestellmenge 10 Stk/Konfiguration</p>
+					<p>
+						<button class="Button" type="submit">Anfragen</button>
+					</p>
 				</form>
 
 				<div class="Product">
