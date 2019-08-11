@@ -14,7 +14,7 @@ function findSelectedValueFor(configurator, feature) {
 
 function getMenu(configurator, featureArr, renderFct) {
 	let multipleFeaturesFlag = ''
-	if (featureArr.length > 1) multipleFeaturesFlag = 'Flex'
+	if (featureArr.length > 1) multipleFeaturesFlag = 'MenuWrapper--multiple'
 
 	return hyper(featureArr)`
 		<div class=${`MenuWrapper ${multipleFeaturesFlag}`}>
@@ -22,22 +22,19 @@ function getMenu(configurator, featureArr, renderFct) {
 				// get selected value for selected option
 				let selectValue = findSelectedValueFor(configurator, feature)
 				return hyper(feature)`
-					<div class="${`Menu Container ${feature.id}`}">
-						<label class="Menu-title" for="Menu-list">
-							${feature.title}
-						</label>
-						<select class="Menu-list" name=${feature.id} onchange=${renderFct} >
+					<label class="${`Menu ${feature.id}`}">
+						${feature.title}
+						<select name=${feature.id} onchange=${renderFct} >
 							${feature.options.map(option => {
 								return hyper()`
 									<option
-										class="Menu-list-item"
 										value=${option}
 										selected=${option === selectValue}
 									>${option}</option>
 								`
 							})}
 						</select>
-					</div>
+					</label>
 				`
 			})}
 		</div>
@@ -55,16 +52,18 @@ function getProductItem(configurator, baseURL, featureArr) {
 	})
 }
 
-function getColorElement(configurator, colorObject) {
+function ColorButton(configurator, colorObject) {
 	function changeColorMask(configurator, event) {
 		event.preventDefault()
 		const filter = event.currentTarget.dataset.filter
 		const mask = configurator.shadowRoot.querySelector('.Mask')
 		// first btn in the list
-		const defaultBtn = configurator.shadowRoot.querySelector('.ColorMenu-button') 
+		const defaultBtn = configurator.shadowRoot.querySelector('.ColorButton') 
 		
 		// Update the mask with selected color.
 		mask.alt = colorObject.name
+		mask.title = colorObject.name
+
 		if (event.currentTarget === defaultBtn) {
 			mask.classList.remove('is-active')
 			return false
@@ -74,14 +73,14 @@ function getColorElement(configurator, colorObject) {
 	}
 	return hyper(colorObject)`
 		<button
-			class="ColorMenu-button"
+			class="ColorButton"
 			data-filter=${colorObject.filter}
 			onclick=${event => changeColorMask(configurator, event)}
 		>
-			<div class="ColorMenu-badge">
-				<span class="ColorMenu-filter" style="${'filter: ' + colorObject.filter}"></span>
-			</div>
-			<p class="ColorMenu-text">${colorObject.name}</p>
+			<span class="ColorButton-circle">
+				<span class="ColorButton-filter" style="${'filter: ' + colorObject.filter}"></span>
+			</span>
+			<span class="ColorButton-text">${colorObject.name}</span>
 		</button>
 	`
 }
@@ -130,20 +129,17 @@ export class Configurator extends HTMLElement {
 	}
 
 	render() {
-		/*const colorsObjects = this.model.colors.filter(color => {
-		return color.name !== 'default';
-		})*/
 		this.html`
 			<div class="Config">
 				<form class="Menus" onsubmit=${this.handleSubmit}>
 					<h1 class="Title">${this.model.name}</h1>
 
-					<div class="Features">
-					${this.model.features.map(featureArr => getMenu(this, featureArr, this.render))}
+					<div class="">
+						${this.model.features.map(featureArr => getMenu(this, featureArr, this.render))}
 					</div>
 
-					<div class="ColorMenu Container">
-						${this.model.colors.map(color => getColorElement(this, color))}
+					<div class="">
+						${this.model.colors.map(color => ColorButton(this, color))}
 					</div>
 
 					<div style="display: none">
@@ -158,16 +154,16 @@ export class Configurator extends HTMLElement {
 						</label>
 					</div>
 
-					<p class="Container">Mindestbestellmenge 10 Stk/Konfiguration</p>
-
-					<div class="Container BtnBox">
-						<button class="BtnBox-button" type="submit">Anfragen</button>
-					</div>
+					<br>
+					<p>Mindestbestellmenge 10 Stk/Konfiguration</p>
+					<p>
+						<button class="Button" type="submit">Anfragen</button>
+					</p>
 				</form>
 
 				<div class="Product">
 					<img 
-						src="./assets/lsa-basis/alt-maske-lang.png" class="ProductItem Mask" 
+						src="./assets/lsa-basis/maske-lang.png" class="ProductItem Mask" 
 						style=${`filter: ${this.model.colors[0].filter}`} 
 						alt=${this.model.colors[0].name}>
 

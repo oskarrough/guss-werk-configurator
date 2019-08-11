@@ -24,11 +24,14 @@ clothes-configurator {
 	justify-content: center;
 }
 
+.Container {
+	margin-left: 1rem;
+	margin-right: 1rem;
+}
+
 /* Color menu */
 
-.ColorMenu {}
-
-.ColorMenu-button {
+.ColorButton {
 	width: 100%;
 	display: flex;
 	flex-flow: row nowrap;
@@ -39,17 +42,17 @@ clothes-configurator {
 	text-align: left;
 }
 
-.ColorMenu-badge {
+.ColorButton-circle {
 	flex-shrink: 0;
-	width: 2rem;
-	height: 2rem;
+	width: 1.8rem;
+	height: 1.8rem;
 	border-radius: 50%;
 	background: #8f8f9c;
 	position: relative;
 	border: 0;
 }
 
-.ColorMenu-filter {
+.ColorButton-filter {
 	mix-blend-mode: multiply;
 	position: absolute;
 	top: 0;
@@ -61,70 +64,53 @@ clothes-configurator {
 	border-radius: 50%;
 }
 
-.ColorMenu-button:first-child .ColorMenu-filter {
-	background: #8f8f9c;
-	mix-blend-mode: unset;
-}
-
-.ColorMenu-text {
-	margin: auto 0 auto 1rem;
-	font-size: 0.8rem;
+.ColorButton-text {
+	margin: auto 0 auto 0.5em;
+	font-size: small;
 }
 
 /* Menus */
 
 .Title {
-	margin: 1rem;
+	margin: 1rem 0;
 	font-size: 1.7rem;
-	padding: 0.2rem;
-	text-align: center;
 }
 
 .Menus {
 	max-width: 40rem;
 	max-height: 100vh;
 	overflow: auto;
-	background-color: #ebeef3;
+	padding: 0 1rem;
 }
 
 .MenuWrapper {
 	margin-bottom: 1rem;
 }
 
-.Menu {
-	display: flex;
-	flex-direction: column;
-	border-radius: 3px;
-	padding: 0.3rem 1rem;
-	background: white;
-	overflow: auto;
-	transition: all 0.2s ease-in-out;
-}
-
-.MenuWrapper.Flex {
+.MenuWrapper--multiple {
 	display: flex;
 	justify-content: space-between;
 }
 
-.MenuWrapper.Flex > .Menu {
+.MenuWrapper--multiple > .Menu {
 	flex-basis: 50%;
 }
 
-.MenuWrapper.Flex .Menu:first-child {
+.MenuWrapper--multiple .Menu:first-child {
 	margin-right: 0.5rem;
 }
 
-.MenuWrapper.Flex .Menu:last-child {
+.MenuWrapper--multiple .Menu:last-child {
 	margin-left: 0.5rem;
 }
 
-.Menu-title {
-	margin: 0;
-	margin-bottom: 0.3rem;
-	text-align: center;
+.Menu {
+	display: flex;
+	flex-direction: column;
+	transition: all 0.2s ease-in-out;
 }
 
-.Menu-list {
+.Menu select {
 	border: 0 !important;
 	background: #e5eaee;
 	border-radius: 0.3rem;
@@ -132,19 +118,11 @@ clothes-configurator {
 	display: flex;
 	justify-content: center;
 	padding-left: 0.4rem;
-	margin-bottom: 0.5rem;
+	margin-top: 0.3rem;
+	/* margin-bottom: 0.5rem; */
 }
 
-.BtnBox {
-	display: flex;
-	justify-content: center;
-}
-
-.BtnBox {
-	margin-bottom: 1rem;
-}
-
-.BtnBox-button {
+.Button {
 	background: black;
 	color: white;
 	text-transform: uppercase;
@@ -157,12 +135,7 @@ clothes-configurator {
 	width: 100%;
 }
 
-.Container {
-	margin-left: 1rem;
-	margin-right: 1rem;
-}
-
-.BtnBox-button:hover {
+.Button:hover {
 	box-shadow: 0 3px 9px 5px rgba(0, 0, 0, 0.04);
 }
 
