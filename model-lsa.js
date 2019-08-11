@@ -1,12 +1,8 @@
 export default {
-	name: "LSA Basis",
+	name: 'LSA Basis',
 	imageFolder: '/assets/lsa-basis/',
 
 	colors: [
-		{
-			name: 'hellgrau',
-			filter: 'none'
-		},
 		{
 			name: 'Blau, Twill 60%CO/40%PES, 240g/m',
 			filter: 'invert(50%) sepia(100%) saturate(211%) hue-rotate(167deg) brightness(69%) contrast(196%)'
@@ -57,10 +53,6 @@ export default {
 		},
 		{
 			name: 'Grafit, Twill 60%CO/40%PES, 240g/m',
-			filter: 'invert(55%) sepia(10%) saturate(62%) hue-rotate(181deg) brightness(125%) contrast(150%)'
-		},
-		{
-			name: 'Farbtest, alternative Maske',
 			filter: 'invert(55%) sepia(10%) saturate(62%) hue-rotate(181deg) brightness(125%) contrast(150%)'
 		}
 	],
