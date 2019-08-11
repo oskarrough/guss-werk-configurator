@@ -138,7 +138,7 @@ export class Configurator extends HTMLElement {
 						${this.model.features.map(featureArr => getMenu(this, featureArr, this.render))}
 					</div>
 
-					<div class="">
+					<div class="Menus-scroll">
 						${this.model.colors.map(color => ColorButton(this, color))}
 					</div>
 
@@ -154,11 +154,12 @@ export class Configurator extends HTMLElement {
 						</label>
 					</div>
 
-					<br>
-					<p>Mindestbestellmenge 10 Stk/Konfiguration</p>
-					<p>
-						<button class="Button" type="submit">Anfragen</button>
-					</p>
+					<footer class="Menus-bottom">
+						<p>Mindestbestellmenge 10 Stk/Konfiguration</p>
+						<p>
+							<button class="Button" type="submit">Anfragen</button>
+						</p>
+					</footer>
 				</form>
 
 				<div class="Product">
