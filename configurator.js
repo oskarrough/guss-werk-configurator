@@ -55,14 +55,17 @@ function getProductItem(configurator, baseURL, featureArr) {
 function ColorButton(configurator, colorObject) {
 	function changeColorMask(configurator, event) {
 		event.preventDefault()
+
 		const filter = event.currentTarget.dataset.filter
 		const mask = configurator.shadowRoot.querySelector('.Mask')
 		// first btn in the list
 		const defaultBtn = configurator.shadowRoot.querySelector('.ColorButton') 
 		
 		// Update the mask with selected color.
-		mask.alt = colorObject.name
-		mask.title = colorObject.name
+		// mask.alt = colorObject.name
+		// mask.title = colorObject.name
+		configurator.model.selectedColor = colorObject
+		configurator.render()
 
 		if (event.currentTarget === defaultBtn) {
 			mask.classList.remove('is-active')
@@ -122,37 +125,76 @@ export class Configurator extends HTMLElement {
 		const config = serializeForm(event.target)
 		// and color
 		const color = this.shadowRoot.querySelector('.Mask').alt
-		config.name = this.model.name
-		config.color = color
+		// config.name = this.model.name
+		// config.color = color
 		console.log({config})
-		alert(JSON.stringify(config))
+		// alert(JSON.stringify(config))
+		//
+		// fetch(event.target.action, {
+		// 	method: 'POST'
+		// }).then(what => {
+		// 	console.log(what)
+		// }).catch(err => console.log(err))
+		//
+		//
+		var action = event.target.action
+		$.ajax({
+			type: "POST",
+			url: action,
+			crossDomain: true,
+			data: new FormData(event.target),
+			dataType: "json",
+			contentType: "multipart/form-data",
+			processData: false,
+			contentType: false,
+			headers: {
+				"Accept": "application/json"
+			}
+		}).done(function() {
+			alert('success')
+		}).fail(function() {
+			alert('An error occurred please try again later.')
+		})
 	}
 
 	render() {
+		const selectedColor = this.model.selectedColor || this.model.colors[0]
+		console.log(selectedColor, this.model)
+		console.log('render')
 		this.html`
 			<div class="Config">
-				<form class="Menus" onsubmit=${this.handleSubmit}>
+				<form action="https://getform.io/f/d629dd1e-dfc9-4e3b-9f5c-c1e626d2d53b" class="Menus" onsubmit=${this.handleSubmit}>
 					<h1 class="Title">${this.model.name}</h1>
+
+					<input class="HiddenInput" type="text" name="model" value=${this.model.name}>
 
 					<div class="">
 						${this.model.features.map(featureArr => getMenu(this, featureArr, this.render))}
 					</div>
 
+					<label class="HiddenInput">Farbe
+						<input required type="text" name="color" value=${selectedColor.name}>
+					</label>
+
 					<div class="Menus-scroll">
 						${this.model.colors.map(color => ColorButton(this, color))}
 					</div>
 
-					<div style="display: none">
+					<p>
 						<label>Email
-							<input type="email" placeholder="Your email">
+						<input required type="email" name="email" placeholder="Your email">
 						</label>
+					</p>
+					<p>
 						<label>Anzahl
-							<input type="number" min="10">
+						<input type="number" name="amount" value="10" min="10">
 						</label>
-						<label>Ansprechpartner
-							<textarea></textarea>
+					</p>
+					<p>
+						<label>Ansprechpartner<br>
+							<textarea name="comments"></textarea>
 						</label>
-					</div>
+					</p>
 
 					<footer class="Menus-bottom">
 						<p>Mindestbestellmenge 10 Stk/Konfiguration</p>
@@ -165,8 +207,9 @@ export class Configurator extends HTMLElement {
 				<div class="Product">
 					<img 
 						src="./assets/lsa-basis/maske-lang.png" class="ProductItem Mask" 
-						style=${`filter: ${this.model.colors[0].filter}`} 
-						alt=${this.model.colors[0].name}>
+						style=${`filter: ${selectedColor.filter}`} 
+						alt=${selectedColor.name}
+						title=${selectedColor.name}>
 
 					${this.model.features.map(featureArr => getProductItem(this, this.model.imageFolder, featureArr))}
 				</div>
