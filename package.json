@@ -10,6 +10,8 @@
     "url": "git+https://github.com/GregVes/clothes-configurator.git"
   },
   "license": "ISC",
-  "devDependencies": {},
+  "devDependencies": {
+    "browser-sync": "^2.26.7"
+  },
   "dependencies": {}
 }
