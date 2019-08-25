@@ -123,52 +123,43 @@ export class Configurator extends HTMLElement {
 	handleSubmit(event) {
 		event.preventDefault()
 
-		// get current configuration 
+		// Get current configuration.
 		const config = serializeForm(event.target)
-		// and color
-		const color = this.shadowRoot.querySelector('.Mask').alt
-		// config.name = this.model.name
-		// config.color = color
-		console.log({config})
-		// alert(JSON.stringify(config))
-		//
+		
+		console.log('Sending form with ajax...')
+		// Couldn't make this work with "formsubmit.com" so we use jQuery....
 		// fetch(event.target.action, {
-		// 	method: 'POST'
-		// }).then(what => {
-		// 	console.log(what)
-		// }).catch(err => console.log(err))
-		//
-		//
-		var action = event.target.action
+		// 	method: 'post',
+		// 	body: config
+		// }).then(() => {
+		// 	alert('success')
+		// }).catch(err => {
+		// 	alert('did not work')
+		// 	console.log(err)
+		// })
+		
 		$.ajax({
-			type: "POST",
-			url: action,
-			crossDomain: true,
-			data: new FormData(event.target),
-			dataType: "json",
-			contentType: "multipart/form-data",
-			processData: false,
-			contentType: false,
-			headers: {
-				"Accept": "application/json"
-			}
+			url: event.target.action,
+			method: 'POST',
+			data: config
 		}).done(function() {
-			alert('success')
+			alert('Thank you. We will get back to you soon.')
 		}).fail(function() {
-			alert('An error occurred please try again later.')
+			alert('Error. Your request was NOT sent. Please try again or contact us on info@guss-werk.com')
 		})
 	}
 
 	render() {
 		const selectedColor = this.model.selectedColor || this.model.colors[0]
-		console.log(selectedColor, this.model)
-		console.log('render')
+		console.log('render', {selectedColor, model: this.model})
 		this.html`
 			<div class="Config">
-				<form action="https://getform.io/f/d629dd1e-dfc9-4e3b-9f5c-c1e626d2d53b" class="Menus" onsubmit=${this.handleSubmit}>
+				<form action="https://formsubmit.co/ajax/oskarrough@gmail.com" class="Menus" onsubmit=${this.handleSubmit}>
 					<h1 class="Title">${this.model.name}</h1>
 
 					<input class="HiddenInput" type="text" name="model" value=${this.model.name}>
+					<input type="hidden" name="_subject" value="Anfrage von Konfigurator">
+					<input type="hidden" name="_replyto">
 
 					<div class="">
 						${this.model.features.map(featureArr => getMenu(this, featureArr, this.render))}
@@ -182,24 +173,23 @@ export class Configurator extends HTMLElement {
 						${this.model.colors.map(color => ColorButton(this, color))}
 					</div>
 
-					<p>
-						<label>Email
-						<input required type="email" name="email" placeholder="Your email">
+					<p style="margin-top: 1em">
+						<label>E-mail
+						<input required type="email" name="email">
 						</label>
 					</p>
 					<p>
-						<label>Anzahl
+						<label>Anzahl <small>(Mindestbestellmenge 10 Stk)</small>
 						<input type="number" name="amount" value="10" min="10">
 						</label>
 					</p>
 					<p>
-						<label>Ansprechpartner<br>
+						<label>Sonnst was?<br>
 							<textarea name="comments"></textarea>
 						</label>
 					</p>
 
 					<footer class="Menus-bottom">
-						<p>Mindestbestellmenge 10 Stk/Konfiguration</p>
 						<p>
 							<button class="Button" type="submit">Anfragen</button>
 						</p>

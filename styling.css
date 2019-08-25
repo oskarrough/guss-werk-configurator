@@ -76,7 +76,7 @@ img {
 .Menus {
 	max-width: 40rem;
 	max-height: 100vh;
-	padding: 0 0.5rem;
+	padding: 0 1rem;
 	display: flex;
 	flex-direction: column;
 	overflow: auto;
@@ -153,13 +153,10 @@ img {
 	display: block;
 }
 
-/* Product */
-
 .Product {
 	position: relative;
-	margin-left: 1rem;
+	height: 100%;
 	background-color: #ebeef3;
-	height: 97%;
 }
 
 .ProductItem {
