@@ -88,14 +88,16 @@ function ColorButton(configurator, colorObject) {
 	`
 }
 
-function serializeForm(form) {
+// Returns an object with all values from the form.
+function serializeForm(form, removeEmpty) {
 	const formData = new FormData(form)
 	let config = {}
 	for (var pair of formData) {
 		let name = pair[0];
 		let value = pair[1];
-		// console.log({name, value})
-		if (value !== '') {
+		if (removeEmpty && value === '') {
+			// dont add empty values
+		} else {
 			config[name] = value
 		}
 	}
