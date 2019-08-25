@@ -55,14 +55,17 @@ function getProductItem(configurator, baseURL, featureArr) {
 function ColorButton(configurator, colorObject) {
 	function changeColorMask(configurator, event) {
 		event.preventDefault()
+
 		const filter = event.currentTarget.dataset.filter
 		const mask = configurator.shadowRoot.querySelector('.Mask')
 		// first btn in the list
 		const defaultBtn = configurator.shadowRoot.querySelector('.ColorButton') 
 		
 		// Update the mask with selected color.
-		mask.alt = colorObject.name
-		mask.title = colorObject.name
+		// mask.alt = colorObject.name
+		// mask.title = colorObject.name
+		configurator.model.selectedColor = colorObject
+		configurator.render()
 
 		if (event.currentTarget === defaultBtn) {
 			mask.classList.remove('is-active')
@@ -85,14 +88,16 @@ function ColorButton(configurator, colorObject) {
 	`
 }
 
-function serializeForm(form) {
+// Returns an object with all values from the form.
+function serializeForm(form, removeEmpty) {
 	const formData = new FormData(form)
 	let config = {}
 	for (var pair of formData) {
 		let name = pair[0];
 		let value = pair[1];
-		// console.log({name, value})
-		if (value !== '') {
+		if (removeEmpty && value === '') {
+			// dont add empty values
+		} else {
 			config[name] = value
 		}
 	}
@@ -118,44 +123,73 @@ export class Configurator extends HTMLElement {
 	handleSubmit(event) {
 		event.preventDefault()
 
-		// get current configuration 
+		// Get current configuration.
 		const config = serializeForm(event.target)
-		// and color
-		const color = this.shadowRoot.querySelector('.Mask').alt
-		config.name = this.model.name
-		config.color = color
-		console.log({config})
-		alert(JSON.stringify(config))
+		
+		console.log('Sending form with ajax...')
+		// Couldn't make this work with "formsubmit.com" so we use jQuery....
+		// fetch(event.target.action, {
+		// 	method: 'post',
+		// 	body: config
+		// }).then(() => {
+		// 	alert('success')
+		// }).catch(err => {
+		// 	alert('did not work')
+		// 	console.log(err)
+		// })
+		
+		$.ajax({
+			url: event.target.action,
+			method: 'POST',
+			data: config
+		}).done(function() {
+			alert('Thank you. We will get back to you soon.')
+		}).fail(function() {
+			alert('Error. Your request was NOT sent. Please try again or contact us on info@guss-werk.com')
+		})
 	}
 
 	render() {
+		const selectedColor = this.model.selectedColor || this.model.colors[0]
+		console.log('render', {selectedColor, model: this.model})
 		this.html`
 			<div class="Config">
-				<form class="Menus" onsubmit=${this.handleSubmit}>
+				<form action="https://formsubmit.co/ajax/info@guss-werk.com" class="Menus" onsubmit=${this.handleSubmit}>
 					<h1 class="Title">${this.model.name}</h1>
+
+					<input class="HiddenInput" type="text" name="model" value=${this.model.name}>
+					<input type="hidden" name="_subject" value="Anfrage von Konfigurator">
+					<input type="hidden" name="_replyto">
 
 					<div class="">
 						${this.model.features.map(featureArr => getMenu(this, featureArr, this.render))}
 					</div>
 
+					<label class="HiddenInput">Farbe
+						<input required type="text" name="color" value=${selectedColor.name}>
+					</label>
+
 					<div class="Menus-scroll">
 						${this.model.colors.map(color => ColorButton(this, color))}
 					</div>
 
-					<div style="display: none">
-						<label>Email
-							<input type="email" placeholder="Your email">
+					<p style="margin-top: 1em">
+						<label>E-mail
+						<input required type="email" name="email">
 						</label>
-						<label>Anzahl
-							<input type="number" min="10">
+					</p>
+					<p>
+						<label>Anzahl <small>(Mindestbestellmenge 10 Stk)</small>
+						<input type="number" name="amount" value="10" min="10">
 						</label>
-						<label>Ansprechpartner
-							<textarea></textarea>
+					</p>
+					<p>
+						<label>Sonnst was?<br>
+							<textarea name="comments"></textarea>
 						</label>
-					</div>
+					</p>
 
 					<footer class="Menus-bottom">
-						<p>Mindestbestellmenge 10 Stk/Konfiguration</p>
 						<p>
 							<button class="Button" type="submit">Anfragen</button>
 						</p>
@@ -165,8 +199,9 @@ export class Configurator extends HTMLElement {
 				<div class="Product">
 					<img 
 						src="./assets/lsa-basis/maske-lang.png" class="ProductItem Mask" 
-						style=${`filter: ${this.model.colors[0].filter}`} 
-						alt=${this.model.colors[0].name}>
+						style=${`filter: ${selectedColor.filter}`} 
+						alt=${selectedColor.name}
+						title=${selectedColor.name}>
 
 					${this.model.features.map(featureArr => getProductItem(this, this.model.imageFolder, featureArr))}
 				</div>
