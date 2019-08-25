@@ -154,7 +154,7 @@ export class Configurator extends HTMLElement {
 		console.log('render', {selectedColor, model: this.model})
 		this.html`
 			<div class="Config">
-				<form action="https://formsubmit.co/ajax/oskarrough@gmail.com" class="Menus" onsubmit=${this.handleSubmit}>
+				<form action="https://formsubmit.co/ajax/info@guss-werk.com" class="Menus" onsubmit=${this.handleSubmit}>
 					<h1 class="Title">${this.model.name}</h1>
 
 					<input class="HiddenInput" type="text" name="model" value=${this.model.name}>
