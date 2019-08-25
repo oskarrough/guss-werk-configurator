@@ -189,7 +189,7 @@ export class Configurator extends HTMLElement {
 						</label>
 					</p>
 					<p>
-						<label>Sonnst was?<br>
+						<label>Sonst was?<br>
 							<textarea name="comments"></textarea>
 						</label>
 					</p>
