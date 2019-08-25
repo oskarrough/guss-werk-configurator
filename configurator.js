@@ -150,8 +150,13 @@ export class Configurator extends HTMLElement {
 	}
 
 	render() {
+		// Get the length of the mask. Not so pretty....
+		let maskLength = this.model ? findSelectedValueFor(this, this.model.features[this.model.features.length - 1][0]) : 'lang'
+		const maskImageUrl = `./assets/lsa-basis/maske-${maskLength}.png`
 		const selectedColor = this.model.selectedColor || this.model.colors[0]
+
 		console.log('render', {selectedColor, model: this.model})
+
 		this.html`
 			<div class="Config">
 				<form action="https://formsubmit.co/ajax/info@guss-werk.com" class="Menus" onsubmit=${this.handleSubmit}>
@@ -198,7 +203,7 @@ export class Configurator extends HTMLElement {
 
 				<div class="Product">
 					<img 
-						src="./assets/lsa-basis/maske-lang.png" class="ProductItem Mask" 
+						src=${maskImageUrl} class="ProductItem Mask" 
 						style=${`filter: ${selectedColor.filter}`} 
 						alt=${selectedColor.name}
 						title=${selectedColor.name}>
