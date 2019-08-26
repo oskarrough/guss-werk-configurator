@@ -55,24 +55,9 @@ function getProductItem(configurator, baseURL, featureArr) {
 function ColorButton(configurator, colorObject) {
 	function changeColorMask(configurator, event) {
 		event.preventDefault()
-
-		const filter = event.currentTarget.dataset.filter
-		const mask = configurator.shadowRoot.querySelector('.Mask')
-		// first btn in the list
-		const defaultBtn = configurator.shadowRoot.querySelector('.ColorButton') 
-		
 		// Update the mask with selected color.
-		// mask.alt = colorObject.name
-		// mask.title = colorObject.name
 		configurator.model.selectedColor = colorObject
 		configurator.render()
-
-		if (event.currentTarget === defaultBtn) {
-			mask.classList.remove('is-active')
-			return false
-		}
-		mask.classList.add('is-active')
-		mask.style.filter = filter
 	}
 	return hyper(colorObject)`
 		<button

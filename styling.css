@@ -146,11 +146,6 @@ img {
 .Mask {
 	mix-blend-mode: multiply;
 	z-index: 3;
-	display: none;
-}
-
-.Mask.is-active {
-	display: block;
 }
 
 .Product {
