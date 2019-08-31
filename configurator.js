@@ -164,7 +164,7 @@ export class Configurator extends HTMLElement {
 					</div>
 
 					<p style="margin-top: 1em">
-						<label>E-mail
+						<label>Ihre E-Mail-Adresse
 						<input required type="email" name="email">
 						</label>
 					</p>
@@ -174,7 +174,7 @@ export class Configurator extends HTMLElement {
 						</label>
 					</p>
 					<p>
-						<label>Sonst was?<br>
+						<label>Ihre Nachricht an uns<br>
 							<textarea name="comments"></textarea>
 						</label>
 					</p>
