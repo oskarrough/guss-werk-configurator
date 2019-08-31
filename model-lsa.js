@@ -4,6 +4,10 @@ export default {
 
 	colors: [
 		{
+			name: 'Taubenblau, Twill 100%CO KbA, 240g/m',
+			filter: 'invert(95%) sepia(100%) saturate(700%) hue-rotate(174deg) brightness(100%) contrast(101%)'
+		},
+		{
 			name: 'Blau, Twill 60%CO/40%PES, 240g/m',
 			filter: 'invert(50%) sepia(100%) saturate(211%) hue-rotate(167deg) brightness(69%) contrast(196%)'
 		},
