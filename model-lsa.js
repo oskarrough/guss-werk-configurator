@@ -8,10 +8,6 @@ export default {
 			filter: 'invert(95%) sepia(100%) saturate(700%) hue-rotate(174deg) brightness(100%) contrast(101%)'
 		},
 		{
-			name: 'Blau, Twill 60%CO/40%PES, 240g/m',
-			filter: 'invert(50%) sepia(100%) saturate(211%) hue-rotate(167deg) brightness(69%) contrast(196%)'
-		},
-		{
 			name: 'Schwarz, Canvas oder Twill 60%CO/40%PES, 320g/m',
 			filter: 'invert(40%) sepia(10%) saturate(63%) hue-rotate(9deg) brightness(100%) contrast(211%)'
 		},
@@ -56,8 +52,8 @@ export default {
 			filter: 'invert(55%) sepia(10%) saturate(62%) hue-rotate(181deg) brightness(125%) contrast(150%)'
 		},
 		{
-			name: 'Dunkelstblau, Ripsmoleskin 100%CO KbA, 320g/m',
-			filter: 'invert(17%) sepia(74%) saturate(1000%) hue-rotate(202deg) brightness(32%) contrast(63%)'
+			name: 'Blau, Twill 60%CO/40%PES, 240g/m',
+			filter: 'invert(50%) sepia(100%) saturate(211%) hue-rotate(167deg) brightness(69%) contrast(196%)'
 		}
 	],
 
