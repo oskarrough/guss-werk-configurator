@@ -164,13 +164,13 @@ export class Configurator extends HTMLElement {
 					</div>
 
 					<p style="margin-top: 1em">
-						<label>Ihre E-Mail-Adresse
-						<input required type="email" name="email">
+						<label>Anzahl <small>(Mindestbestellmenge 10 Stk)</small>
+						<input type="number" name="amount" value="10" min="10">
 						</label>
 					</p>
 					<p>
-						<label>Anzahl <small>(Mindestbestellmenge 10 Stk)</small>
-						<input type="number" name="amount" value="10" min="10">
+						<label>Ihre E-Mail-Adresse
+						<input required type="email" name="email">
 						</label>
 					</p>
 					<p>
