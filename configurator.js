@@ -177,6 +177,11 @@ export class Configurator extends HTMLElement {
 						<label>Ansprechpartner*in und zusätzliche Infos<br>
 							<textarea name="comments"></textarea>
 						</label>
+					</p>					
+					<p>
+						<label>Ansprechpartner*in und zusätzliche Infos<br>
+							<textarea name="comments"></textarea>
+						</label>
 					</p>
 
 					<footer class="Menus-bottom">
