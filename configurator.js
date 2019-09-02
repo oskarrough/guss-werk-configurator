@@ -174,8 +174,8 @@ export class Configurator extends HTMLElement {
 						</label>
 					</p>
 					<p>
-						<label>Ansprechpartner*in und zusätzliche Infos<br>
-							<textarea name="comments"></textarea>
+						<label>Ansprechpartner*in, Kunde<br>
+							<textarea name="contact"></textarea>
 						</label>
 					</p>					
 					<p>
