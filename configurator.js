@@ -174,7 +174,7 @@ export class Configurator extends HTMLElement {
 						</label>
 					</p>
 					<p>
-						<label>Ihre Nachricht an uns<br>
+						<label>Ansprechpartner*in und zusätzliche Infos<br>
 							<textarea name="comments"></textarea>
 						</label>
 					</p>
