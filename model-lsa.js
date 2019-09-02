@@ -131,7 +131,7 @@ export default {
 				title: 'Länge',
 				url: 'lsa-',
 				format: '.jpg',
-				options: ['lang', 'kurz']
+				options: ['lang-kontrast', 'kurz']
 			}
 		]
 	]
