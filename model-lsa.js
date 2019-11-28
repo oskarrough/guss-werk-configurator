@@ -20,7 +20,7 @@ export default {
 			filter: 'invert(56%) sepia(100%) saturate(991%) hue-rotate(312deg) brightness(51%) contrast(100%)'
 		},
 		{
-			name: 'Ocker, Twill 100%CO KbA, 280g/m',
+			name: 'Ocker, Twill 100%CO, 280g/m',
 			filter: 'invert(57%) sepia(100%) saturate(200%) hue-rotate(332deg) brightness(100%) contrast(200%)'
 		},
 		{
@@ -36,7 +36,7 @@ export default {
 			filter: 'invert(60%) sepia(50%) saturate(400%) hue-rotate(178deg) brightness(35%) contrast(92%)'
 		},
 		{
-			name: 'Sand, Twill 100%CO KbA, 280g/m',
+			name: 'Sand, Canvas 60%CO/40%PES, 320g/m',
 			filter: 'invert(100%) sepia(100%) saturate(700%) hue-rotate(319deg) brightness(100%) contrast(80%)'
 		},
 		{
