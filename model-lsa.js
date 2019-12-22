@@ -65,15 +65,15 @@ export default {
 				url: 'gurt-',
 				format: '.png',
 				options: [
-					'GL02 braun',
-					'GL02 cognac',
-					'GL02 schwarz',
 					'GK01 braun',
 					'GK01 cognac',
 					'GK01 schwarz',
 					'GK02 braun',
 					'GK02 cognac',
 					'GK02 schwarz',
+					'GL02 braun',
+					'GL02 cognac',
+					'GL02 schwarz',
 					'GT03 grau-melange',
 					'GT03 rot',
 					'GT03 schwarz'
