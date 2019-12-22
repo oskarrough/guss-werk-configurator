@@ -61,7 +61,7 @@ export default {
 		[
 			{
 				id: 'gurte',
-				title: 'Gurte',
+				title: 'Gurtauswahl',
 				url: 'gurt-',
 				format: '.png',
 				options: [
