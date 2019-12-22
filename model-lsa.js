@@ -65,18 +65,18 @@ export default {
 				url: 'gurt-',
 				format: '.png',
 				options: [
-					'GK01 braun',
-					'GK01 cognac',
-					'GK01 schwarz',
-					'GK02 braun',
-					'GK02 cognac',
-					'GK02 schwarz',
-					'GL02 braun',
-					'GL02 cognac',
-					'GL02 schwarz',
-					'GT03 grau-melange',
-					'GT03 rot',
-					'GT03 schwarz'
+					'Kombigurt GK01 braun',
+					'Kombigurt GK01 cognac',
+					'Kombigurt GK01 schwarz',
+					'Kombigurt GK02 braun',
+					'Kombigurt GK02 cognac',
+					'Kombigurt GK02 schwarz',
+					'Vollledergurte GL02 braun',
+					'Vollledergurte GL02 cognac',
+					'Vollledergurte GL02 schwarz',
+					'Textilgurt GT03 grau-melange',
+					'Textilgurt GT03 rot',
+					'Textilgurt GT03 schwarz'
 				]
 			}
 		],
