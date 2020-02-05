@@ -180,7 +180,7 @@ export class Configurator extends HTMLElement {
 					</p>
 					<p>
 						<label>Ihre Telefonnummer für Rückfragen
-						<input type="number" name="phone">
+						<input type="tel" name="phone">
 						</label>
 					</p>					
 					<p>
