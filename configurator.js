@@ -179,8 +179,8 @@ export class Configurator extends HTMLElement {
 						</label>
 					</p>
 					<p>
-						<label>Ihre Telefonnummer für Rückfragen
-						<input type="tel" name="phone">
+						<label>Ihre Telefonnummer für Rückfragen<br>
+						<input type="tel" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
 						</label>
 					</p>					
 					<p>
