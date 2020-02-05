@@ -169,13 +169,18 @@ export class Configurator extends HTMLElement {
 						</label>
 					</p>
 					<p>
+						<label>Ansprechpartner*in / Unternehmen<br>
+							<textarea name="contact"></textarea>
+						</label>
+					</p>					
+					<p>
 						<label>Ihre E-Mail-Adresse
 						<input required type="email" name="email">
 						</label>
 					</p>
 					<p>
-						<label>Ansprechpartner*in / Unternehmen<br>
-							<textarea name="contact"></textarea>
+						<label>Ihre Telefonnummer für Rückfragen<br>
+							<textarea name="phone"></textarea>
 						</label>
 					</p>					
 					<p>
