@@ -165,27 +165,27 @@ export class Configurator extends HTMLElement {
 
 					<p style="margin-top: 1em">
 						<label>Anzahl <small>(Mindestbestellmenge 10 Stk)</small>
-						<input type="number" name="amount" value="10" min="10">
+						<input type="number" name="Anzahl" value="10" min="10">
 						</label>
 					</p>
 					<p>
 						<label>Ansprechpartner*in / Unternehmen<br>
-							<textarea name="contact"></textarea>
+							<textarea name="Ansprechpartner*in"></textarea>
 						</label>
 					</p>					
 					<p>
 						<label>Ihre E-Mail-Adresse
-						<input required type="email" name="email">
+						<input required type="Email" name="email">
 						</label>
 					</p>
 					<p>
 						<label>Ihre Telefonnummer für Rückfragen<br>
-							<textarea name="phone"></textarea>
+							<textarea name="Telefon"></textarea>
 						</label>
 					</p>					
 					<p>
 						<label>Ihre Nachricht an uns<br>
-							<textarea name="comments"></textarea>
+							<textarea name="Kommentar"></textarea>
 						</label>
 					</p>
 
