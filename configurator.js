@@ -179,6 +179,11 @@ export class Configurator extends HTMLElement {
 						</label>
 					</p>
 					<p>
+						<label>Ihre Telefonnummer für Rückfragen
+						<input type="number" name="phone">
+						</label>
+					</p>					
+					<p>
 						<label>Ihre Telefonnummer für Rückfragen<br>
 							<textarea name="phone"></textarea>
 						</label>
