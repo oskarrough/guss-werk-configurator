@@ -4,7 +4,7 @@ export default {
 
 	colors: [
 		{
-			name: 'Taubenblau, Twill 100%CO KbA, 240g/m',
+			name: 'Hellblau, Twill 60%CO/40%PES, 240g/m',
 			filter: 'invert(95%) sepia(100%) saturate(700%) hue-rotate(174deg) brightness(100%) contrast(101%)'
 		},
 		{
@@ -20,7 +20,7 @@ export default {
 			filter: 'invert(56%) sepia(100%) saturate(991%) hue-rotate(312deg) brightness(51%) contrast(100%)'
 		},
 		{
-			name: 'Ocker, Twill 100%CO, 280g/m',
+			name: 'Karamell, Einfachpilot 100%CO, 380g/m',
 			filter: 'invert(57%) sepia(100%) saturate(160%) hue-rotate(335deg) brightness(100%) contrast(200%)'
 		},
 		{
