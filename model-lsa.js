@@ -40,10 +40,6 @@ export default {
 			filter: 'invert(100%) sepia(100%) saturate(700%) hue-rotate(319deg) brightness(100%) contrast(80%)'
 		},
 		{
-			name: 'Petrol, Twill 100%CO KbA, 280g/m',
-			filter: 'invert(25%) sepia(100%) saturate(67%) hue-rotate(148deg) brightness(189%) contrast(160%)'
-		},
-		{
 			name: 'Anthrazit, Twill 60%CO/40%PES, 280g/m',
 			filter: 'invert(40%) sepia(10%) saturate(62%) hue-rotate(181deg) brightness(105%) contrast(150%)'
 		},
