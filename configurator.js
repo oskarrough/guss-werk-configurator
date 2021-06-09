@@ -128,7 +128,7 @@ export class Configurator extends HTMLElement {
 			method: 'POST',
 			data: config
 		}).done(function() {
-			alert('Wegen technischer Probleme kann die Anfrage NICHT gesendet werden. Bitte nehmen Sie direkt Kontakt unter info@guss-werk.com auf.')
+			alert('Wegen technischer Probleme kann die Anfrage NICHT gesendet werden. Bitte nehmen Sie direkt Kontakt unter info@guss-werk.com oder telefonisch unter +49 30 55 61 86 17 auf.')
 		}).fail(function() {
 			alert('Error. Your request was NOT sent. Please try again or contact us on info@guss-werk.com')
 		})
