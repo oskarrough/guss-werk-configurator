@@ -128,7 +128,7 @@ export class Configurator extends HTMLElement {
 			method: 'POST',
 			data: config
 		}).done(function() {
-			alert('Thank you. We will get back to you soon.')
+			alert('Wegen technischer Probleme kann die Anfrage NICHT gesendet werden. Bitte nehmen Sie direkt Kontakt unter info@guss-werk.com auf.')
 		}).fail(function() {
 			alert('Error. Your request was NOT sent. Please try again or contact us on info@guss-werk.com')
 		})
