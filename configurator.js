@@ -144,7 +144,7 @@ export class Configurator extends HTMLElement {
 
 		this.html`
 			<div class="Config">
-				<form action="https://formsubmit.io/ajax/info@guss-werk.com" class="Menus" onsubmit=${this.handleSubmit}>
+				<form action="https://formsubmit.co/ajax/info@guss-werk.com" class="Menus" onsubmit=${this.handleSubmit}>
 					<h1 class="Title">${this.model.name}</h1>
 
 					<input class="HiddenInput" type="text" name="model" value=${this.model.name}>
