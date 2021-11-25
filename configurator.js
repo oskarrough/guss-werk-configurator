@@ -128,7 +128,7 @@ export class Configurator extends HTMLElement {
 			method: 'POST',
 			data: config
 		}).done(function() {
-			alert('Thanks a lot. Your request has been sent and we will contact you soon.')
+			alert('Error. Your request was NOT sent. Please contact us on info@guss-werk.com')
 		}).fail(function() {
 			alert('Error. Your request was NOT sent. Please try again or contact us on info@guss-werk.com')
 		})
