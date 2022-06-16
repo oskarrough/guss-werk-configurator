@@ -1,0 +1,18 @@
+.success-massege-form {
+  font-family: Europa, system-ui, segoe ui, sans-serif;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  max-width: 450px;
+  background-color: #89c864;
+  z-index: 999;
+  padding: 20px 35px;
+  display: none;
+  text-align: center;
+}
+
+.success-massege {
+  font-size: 1.3rem;
+  color: #fff;
+}

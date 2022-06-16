@@ -106,11 +106,11 @@ export class Configurator extends HTMLElement {
 	}
 
 	handleSubmit(event) {
+    
 		event.preventDefault()
 
 		// Get current configuration.
 		const config = serializeForm(event.target)
-		
 		console.log('Sending form with ajax...')
 		// Couldn't make this work with "formsubmit.com" so we use jQuery....
 		// fetch(event.target.action, {
@@ -122,14 +122,21 @@ export class Configurator extends HTMLElement {
 		// 	alert('did not work')
 		// 	console.log(err)
 		// })
-		
+
 		$.ajax({
 			url: event.target.action,
 			method: 'POST',
-			data: config
-		}).done(function() {
-			alert('Error. Your request was NOT sent. Please contact us on info@guss-werk.com')
-		}).fail(function() {
+			data: config,
+      success: function() {
+      if($('#success-massege-form').length){
+        $('#success-massege-form').fadeIn();
+        setTimeout(function() { 
+          $('#success-massege-form').fadeOut()
+        }, 3000);
+      }
+        //alert('Vielen Dank!<br>Ihre Anfrage wurde erfolgreich verschickt!')
+      }
+    }).fail(function() {
 			alert('Error. Your request was NOT sent. Please try again or contact us on info@guss-werk.com')
 		})
 	}
@@ -140,7 +147,7 @@ export class Configurator extends HTMLElement {
 		const maskImageUrl = `./assets/lsa-basis/maske-${maskLength}.png`
 		const selectedColor = this.model.selectedColor || this.model.colors[0]
 
-		console.log('render', {selectedColor, model: this.model})
+		// console.log('render', {selectedColor, model: this.model})
 
 		this.html`
 			<div class="Config">
@@ -175,7 +182,7 @@ export class Configurator extends HTMLElement {
 					</p>					
 					<p>
 						<label>Ihre E-Mail-Adresse
-						<input required type="email" name="email">
+						<input required type="email" name="email" placeholder="E-Mail-Adresse">
 						</label>
 					</p>
 					<p>
