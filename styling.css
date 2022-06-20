@@ -195,3 +195,12 @@ input[type="number"] {
 input[type="number"] {
 	/* max-width: 5rem; */
 }
+
+input:focus,
+textarea:focus{
+  outline: 0;
+  background: white;
+}
+input:invalid:not(:focus):not(:placeholder-shown) { 
+  border: 1px solid red;
+}
