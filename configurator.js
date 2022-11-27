@@ -171,8 +171,8 @@ export class Configurator extends HTMLElement {
 					</div>
 
 					<p style="margin-top: 1em">
-						<label>Anzahl <small>(Mindestbestellmenge 10 Stk)</small>
-						<input type="number" name="amount" value="10" min="10">
+						<label>Anzahl <small>(Mindestbestellmenge 50 Stk)</small>
+						<input type="number" name="amount" value="50" min="50">
 						</label>
 					</p>
 					<p>
