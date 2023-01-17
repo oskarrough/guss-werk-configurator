@@ -21,7 +21,7 @@ export default {
 		},
 		{
 			name: 'Olivgrau, Mischgewebe 40%CO/60%PES, 320g/m',
-			filter: 'invert(120%) sepia(100%) saturate(700%) hue-rotate(32deg) brightness(100%) contrast(80%)'
+			filter: 'invert(100%) sepia(10%) saturate(700%) hue-rotate(32deg) brightness(100%) contrast(80%)'
 		},
 		{
 			name: 'Braun, Twill 60%CO/40%PES, 240g/m',
