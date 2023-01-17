@@ -4,6 +4,10 @@ export default {
 
 	colors: [
 		{
+			name: 'Sand, Canvas 60%CO/40%PES, 320g/m',
+			filter: 'invert(100%) sepia(100%) saturate(700%) hue-rotate(319deg) brightness(100%) contrast(80%)'
+		},
+		{
 			name: 'Schwarz, Canvas oder Twill 60%CO/40%PES, 320g/m',
 			filter: 'invert(40%) sepia(10%) saturate(63%) hue-rotate(9deg) brightness(100%) contrast(211%)'
 		},
@@ -20,7 +24,7 @@ export default {
 			filter: 'invert(57%) sepia(100%) saturate(190%) hue-rotate(335deg) brightness(100%) contrast(200%)'
 		},
 		{
-			name: 'Olivgrau, Mischgewebe 40%CO/60%PES, 320g/m',
+			name: 'Olivgrau, Mischgewebe 40%CO/60%PES, 240g/m',
 			filter: 'invert(100%) sepia(50%) saturate(685%) hue-rotate(32deg) brightness(100%) contrast(80%)'
 		},
 		{
@@ -30,10 +34,6 @@ export default {
 		{
 			name: 'Denim, Raw Denim 100%CO KbA, 320g/m',
 			filter: 'invert(60%) sepia(50%) saturate(400%) hue-rotate(178deg) brightness(35%) contrast(92%)'
-		},
-		{
-			name: 'Sand, Canvas 60%CO/40%PES, 320g/m',
-			filter: 'invert(100%) sepia(100%) saturate(700%) hue-rotate(319deg) brightness(100%) contrast(80%)'
 		},
 		{
 			name: 'Anthrazit, Twill 60%CO/40%PES, 280g/m',
