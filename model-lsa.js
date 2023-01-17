@@ -20,8 +20,8 @@ export default {
 			filter: 'invert(57%) sepia(100%) saturate(190%) hue-rotate(335deg) brightness(100%) contrast(200%)'
 		},
 		{
-			name: 'Olivgrün, Ripsmoleskin 100%CO KbA, 320g/m',
-			filter: 'invert(32%) sepia(1000%) saturate(133%) hue-rotate(32deg) brightness(80%) contrast(80%)'
+			name: 'Olivgrau, Mischgewebe 40%CO/60%PES, 320g/m',
+			filter: 'invert(32%) sepia(1000%) saturate(100%) hue-rotate(32deg) brightness(120%) contrast(100%)'
 		},
 		{
 			name: 'Braun, Twill 60%CO/40%PES, 240g/m',
