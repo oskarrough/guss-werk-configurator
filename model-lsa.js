@@ -17,7 +17,7 @@ export default {
 		},
 		{
 			name: 'Karamell, Einfachpilot 100%CO, 380g/m',
-			filter: 'invert(57%) sepia(100%) saturate(200%) hue-rotate(335deg) brightness(100%) contrast(200%)'
+			filter: 'invert(57%) sepia(100%) saturate(190%) hue-rotate(335deg) brightness(100%) contrast(200%)'
 		},
 		{
 			name: 'Olivgrün, Ripsmoleskin 100%CO KbA, 320g/m',
