@@ -4,10 +4,6 @@ export default {
 
 	colors: [
 		{
-			name: 'Hellblau, Twill 60%CO/40%PES, 240g/m',
-			filter: 'invert(95%) sepia(100%) saturate(700%) hue-rotate(174deg) brightness(100%) contrast(101%)'
-		},
-		{
 			name: 'Schwarz, Canvas oder Twill 60%CO/40%PES, 320g/m',
 			filter: 'invert(40%) sepia(10%) saturate(63%) hue-rotate(9deg) brightness(100%) contrast(211%)'
 		},
@@ -21,7 +17,7 @@ export default {
 		},
 		{
 			name: 'Karamell, Einfachpilot 100%CO, 380g/m',
-			filter: 'invert(57%) sepia(100%) saturate(160%) hue-rotate(335deg) brightness(100%) contrast(200%)'
+			filter: 'invert(57%) sepia(1000%) saturate(160%) hue-rotate(335deg) brightness(100%) contrast(200%)'
 		},
 		{
 			name: 'Olivgrün, Ripsmoleskin 100%CO KbA, 320g/m',
